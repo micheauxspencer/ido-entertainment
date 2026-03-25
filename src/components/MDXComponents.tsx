@@ -4,22 +4,22 @@ import { Check } from "lucide-react";
 export const mdxComponents: MDXComponents = {
   h1: (props) => (
     <h1
-      className="text-4xl md:text-5xl text-charcoal mb-6 mt-12 first:mt-0"
-      style={{ fontFamily: "var(--font-display)" }}
+      className="text-3xl md:text-4xl text-charcoal mb-6 mt-12 first:mt-0"
+      style={{ fontFamily: "var(--font-serif)" }}
       {...props}
     />
   ),
   h2: (props) => (
     <h2
-      className="text-3xl md:text-4xl text-charcoal mb-4 mt-12"
-      style={{ fontFamily: "var(--font-display)" }}
+      className="text-2xl md:text-3xl text-charcoal mb-4 mt-12"
+      style={{ fontFamily: "var(--font-serif)" }}
       {...props}
     />
   ),
   h3: (props) => (
     <h3
-      className="text-xl md:text-2xl text-charcoal mb-3 mt-8 font-bold"
-      style={{ fontFamily: "var(--font-accent)" }}
+      className="text-lg md:text-xl text-charcoal mb-3 mt-8"
+      style={{ fontFamily: "var(--font-serif)" }}
       {...props}
     />
   ),

@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import HoneyBookForm from "@/components/HoneyBookForm";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import {
   Music,
   Camera,
@@ -9,7 +11,6 @@ import {
   Tent,
   Wine,
   Lightbulb,
-
   Phone,
   Mail,
   MapPin,
@@ -17,8 +18,6 @@ import {
   ArrowRight,
   Sparkles,
   Check,
-  Menu,
-  X,
 } from "lucide-react";
 
 /* ─── Intersection Observer Hook ─── */
@@ -122,95 +121,9 @@ const services = [
 
 /* ─── Main Page ─── */
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <>
-      {/* ═══════════ NAVBAR ═══════════ */}
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "navbar-glass py-3" : "bg-transparent py-5"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-1">
-            <span
-              className="text-[1.7rem] font-bold text-white tracking-tight leading-none"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              I DO
-            </span>
-            <span className="text-gold text-[1.7rem] font-bold leading-none">.</span>
-            <span
-              className="text-2xl text-white tracking-[0.15em]"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              ENTERTAINMENT
-            </span>
-          </a>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {["Services", "Reviews", "About", "Contact"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-sm text-white/80 hover:text-gold transition-colors duration-300 tracking-wide uppercase"
-                style={{ fontFamily: "var(--font-accent)" }}
-              >
-                {item}
-              </a>
-            ))}
-            <a
-              href="#contact"
-              className="btn-primary bg-gold text-charcoal px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide uppercase"
-              style={{ fontFamily: "var(--font-accent)" }}
-            >
-              Get a Free Quote
-            </a>
-          </div>
-
-          {/* Mobile Menu Toggle */}
-          <button
-            className="md:hidden text-white"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div className="md:hidden navbar-glass mt-2 mx-4 rounded-2xl p-6 space-y-4">
-            {["Services", "Reviews", "About", "Contact"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="block text-white/80 hover:text-gold transition-colors text-lg"
-                onClick={() => setMenuOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
-            <a
-              href="#contact"
-              className="block btn-primary bg-gold text-charcoal px-6 py-3 rounded-full text-center font-semibold"
-              onClick={() => setMenuOpen(false)}
-            >
-              Get a Free Quote
-            </a>
-          </div>
-        )}
-      </nav>
+      <Navbar />
 
       {/* ═══════════ HERO ═══════════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-charcoal">
@@ -230,12 +143,12 @@ export default function Home() {
         <div className="absolute top-20 left-10 w-72 h-72 bg-gold/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-10 md:pt-16 pb-28 md:pb-32">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2 mb-6 md:mb-8">
-            <Sparkles size={16} className="text-gold" />
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 mb-8 md:mb-10">
+            <Sparkles size={14} className="text-gold" />
             <span
-              className="text-sm text-white/90 tracking-wider uppercase"
+              className="text-xs text-white/90 tracking-wider uppercase"
               style={{ fontFamily: "var(--font-accent)" }}
             >
               Now Booking 2026 &amp; 2027 Events
@@ -243,15 +156,15 @@ export default function Home() {
           </div>
 
           {/* Headline */}
-          <h1 className="mb-8 md:mb-6">
+          <h1 className="mb-6 md:mb-8">
             <span
-              className="block text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-white leading-[0.9] tracking-tight"
+              className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.9] tracking-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
               UNFORGETTABLE
             </span>
             <span
-              className="block text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-gold italic mt-2"
+              className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gold italic mt-2"
               style={{ fontFamily: "var(--font-serif)" }}
             >
               Events
@@ -259,7 +172,7 @@ export default function Home() {
           </h1>
 
           <p
-            className="text-base md:text-xl text-white/70 max-w-2xl mx-auto mb-10 md:mb-10 leading-relaxed px-2 md:px-0"
+            className="text-base md:text-lg text-white/70 max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed px-2 md:px-0"
             style={{ fontFamily: "var(--font-body)" }}
           >
             Full-service event planning, premium rentals, and custom
@@ -271,20 +184,20 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#contact"
-              className="btn-primary pulse-ring bg-gold text-charcoal px-10 py-4 rounded-full text-lg font-bold tracking-wide uppercase flex items-center gap-2"
+              className="btn-primary pulse-ring bg-gold text-charcoal px-8 py-3.5 rounded-full text-base font-bold tracking-wide uppercase flex items-center gap-2"
               style={{ fontFamily: "var(--font-accent)" }}
             >
               Get a Free Quote
-              <ArrowRight size={20} />
+              <ArrowRight size={18} />
             </a>
             <a
               href="#services"
-              className="group flex items-center gap-2 text-white/80 hover:text-gold transition-colors px-6 py-4"
+              className="group flex items-center gap-2 text-white/80 hover:text-gold transition-colors px-6 py-3"
               style={{ fontFamily: "var(--font-accent)" }}
             >
               Explore Services
               <ChevronRight
-                size={18}
+                size={16}
                 className="group-hover:translate-x-1 transition-transform"
               />
             </a>
@@ -292,7 +205,7 @@ export default function Home() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
           <span className="text-xs text-white/40 tracking-widest uppercase">
             Scroll
           </span>
@@ -714,104 +627,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════ FOOTER ═══════════ */}
-      <footer className="bg-charcoal pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            {/* Brand */}
-            <div>
-              <div className="flex items-center gap-1 mb-4">
-                <span
-                  className="text-[1.7rem] font-bold text-white tracking-tight leading-none"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  I DO
-                </span>
-                <span className="text-gold text-[1.7rem] font-bold leading-none">.</span>
-                <span
-                  className="text-2xl text-white tracking-[0.1em]"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  ENTERTAINMENT
-                </span>
-              </div>
-              <p className="text-white/40 text-sm leading-relaxed max-w-sm">
-                Full-service event planning, premium rentals, and custom
-                entertainment for weddings, corporate events, and celebrations
-                across Toronto and the GTA.
-              </p>
-            </div>
-
-            {/* Services */}
-            <div>
-              <h4
-                className="text-sm text-white/70 uppercase tracking-wider mb-4"
-                style={{ fontFamily: "var(--font-accent)" }}
-              >
-                Services
-              </h4>
-              <ul className="space-y-2">
-                {services.map((s, i) => (
-                  <li key={i}>
-                    <a
-                      href="#services"
-                      className="text-white/40 hover:text-gold text-sm transition-colors"
-                    >
-                      {s.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Service Areas */}
-            <div>
-              <h4
-                className="text-sm text-white/70 uppercase tracking-wider mb-4"
-                style={{ fontFamily: "var(--font-accent)" }}
-              >
-                Service Areas
-              </h4>
-              <ul className="space-y-2">
-                {[
-                  "Toronto",
-                  "Mississauga",
-                  "Brampton",
-                  "Vaughan",
-                  "Etobicoke",
-                  "Oakville",
-                  "North York",
-                ].map((area, i) => (
-                  <li key={i} className="text-white/40 text-sm">
-                    {area}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Bottom Bar */}
-          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-white/30 text-sm">
-              &copy; 2026 I DO Entertainment. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <a
-                href="/privacy"
-                className="text-white/30 hover:text-gold text-sm transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="/terms"
-                className="text-white/30 hover:text-gold text-sm transition-colors"
-              >
-                Terms of Service
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

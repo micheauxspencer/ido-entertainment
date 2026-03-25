@@ -81,7 +81,7 @@ export default async function BlogPost({
       <Navbar solid />
 
       {/* Hero */}
-      <section className="relative bg-charcoal pt-28 pb-16">
+      <section className="relative bg-charcoal pt-28 pb-28">
         <div className="max-w-3xl mx-auto px-6">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-6 text-sm text-white/40">
@@ -109,10 +109,10 @@ export default async function BlogPost({
           </div>
 
           <h1
-            className="text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4"
-            style={{ fontFamily: "var(--font-display)" }}
+            className="text-3xl md:text-4xl lg:text-5xl text-white leading-snug mb-4"
+            style={{ fontFamily: "var(--font-serif)" }}
           >
-            {fm.title.toUpperCase()}
+            {fm.title}
           </h1>
 
           <div className="flex items-center gap-4 text-sm text-white/40">
@@ -135,7 +135,7 @@ export default async function BlogPost({
       </section>
 
       {/* Featured Image */}
-      <div className="max-w-4xl mx-auto px-6 -mt-1">
+      <div className="max-w-4xl mx-auto px-6 -mt-16 relative z-10">
         <div className="aspect-[2/1] rounded-2xl overflow-hidden shadow-2xl">
           <div
             className="w-full h-full bg-cover bg-center"

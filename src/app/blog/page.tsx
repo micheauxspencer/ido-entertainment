@@ -88,10 +88,10 @@ export default function BlogIndex() {
                     </div>
 
                     <h2
-                      className="text-xl text-charcoal mb-2 group-hover:text-gold-dark transition-colors leading-tight"
-                      style={{ fontFamily: "var(--font-display)" }}
+                      className="text-xl text-charcoal mb-2 group-hover:text-gold-dark transition-colors leading-snug"
+                      style={{ fontFamily: "var(--font-serif)" }}
                     >
-                      {post.title.toUpperCase()}
+                      {post.title}
                     </h2>
 
                     <p className="text-charcoal/60 text-sm leading-relaxed mb-4 line-clamp-2">

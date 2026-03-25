@@ -21,7 +21,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-1">
+        <Link href="/" className="flex items-center gap-1 shrink-0">
           <span
             className="text-[1.7rem] font-bold text-white tracking-tight leading-none"
             style={{ fontFamily: "var(--font-serif)" }}
