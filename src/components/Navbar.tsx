@@ -42,6 +42,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
             { label: "Services", href: "/#services" },
             { label: "Reviews", href: "/#reviews" },
             { label: "About", href: "/#about" },
+            { label: "Blog", href: "/blog" },
             { label: "Contact", href: "/#contact" },
           ].map((item) => (
             <Link
@@ -77,6 +78,7 @@ export default function Navbar({ solid = false }: { solid?: boolean }) {
             { label: "Services", href: "/#services" },
             { label: "Reviews", href: "/#reviews" },
             { label: "About", href: "/#about" },
+            { label: "Blog", href: "/blog" },
             { label: "Contact", href: "/#contact" },
           ].map((item) => (
             <Link

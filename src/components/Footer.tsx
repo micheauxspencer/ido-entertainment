@@ -63,9 +63,17 @@ export default function Footer() {
               className="text-sm text-white/70 uppercase tracking-wider mb-4"
               style={{ fontFamily: "var(--font-accent)" }}
             >
-              Service Areas
+              Explore
             </h4>
             <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-white/40 hover:text-gold text-sm transition-colors"
+                >
+                  Blog
+                </Link>
+              </li>
               {[
                 "Toronto",
                 "Mississauga",
