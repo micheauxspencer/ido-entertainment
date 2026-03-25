@@ -18,6 +18,7 @@ export interface PostFrontmatter {
 export interface PostMeta extends PostFrontmatter {
   slug: string;
   readingTime: string;
+  searchContent: string;
 }
 
 export function getAllPosts(): PostMeta[] {
@@ -29,9 +30,23 @@ export function getAllPosts(): PostMeta[] {
     const { data, content } = matter(raw);
     const rt = readingTime(content);
 
+    // Strip MDX syntax for searchable plaintext
+    const searchContent = content
+      .replace(/^---[\s\S]*?---/m, "")
+      .replace(/#{1,6}\s/g, "")
+      .replace(/\*\*([^*]+)\*\*/g, "$1")
+      .replace(/\*([^*]+)\*/g, "$1")
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+      .replace(/[`>-]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .toLowerCase()
+      .slice(0, 2000);
+
     return {
       slug,
       readingTime: rt.text,
+      searchContent,
       ...(data as PostFrontmatter),
     };
   });
