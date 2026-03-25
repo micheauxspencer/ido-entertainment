@@ -12,6 +12,16 @@ const services = [
   "lighting-audio",
 ];
 
+const areas = [
+  "toronto",
+  "mississauga",
+  "brampton",
+  "vaughan",
+  "etobicoke",
+  "oakville",
+  "north-york",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const servicePages = services.map((slug) => ({
     url: `${BASE_URL}/services/${slug}`,
@@ -27,6 +37,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const areaPages = areas.map((slug) => ({
+    url: `${BASE_URL}/areas/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   return [
     {
       url: BASE_URL,
@@ -35,6 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     ...servicePages,
+    ...areaPages,
     {
       url: `${BASE_URL}/blog`,
       lastModified: new Date(),

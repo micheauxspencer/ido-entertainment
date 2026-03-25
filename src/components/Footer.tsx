@@ -75,16 +75,21 @@ export default function Footer() {
                 </Link>
               </li>
               {[
-                "Toronto",
-                "Mississauga",
-                "Brampton",
-                "Vaughan",
-                "Etobicoke",
-                "Oakville",
-                "North York",
-              ].map((area, i) => (
-                <li key={i} className="text-white/40 text-sm">
-                  {area}
+                { name: "Toronto", slug: "toronto" },
+                { name: "Mississauga", slug: "mississauga" },
+                { name: "Brampton", slug: "brampton" },
+                { name: "Vaughan", slug: "vaughan" },
+                { name: "Etobicoke", slug: "etobicoke" },
+                { name: "Oakville", slug: "oakville" },
+                { name: "North York", slug: "north-york" },
+              ].map((area) => (
+                <li key={area.slug}>
+                  <Link
+                    href={`/areas/${area.slug}`}
+                    className="text-white/40 hover:text-gold text-sm transition-colors"
+                  >
+                    {area.name}
+                  </Link>
                 </li>
               ))}
             </ul>
