@@ -29,6 +29,7 @@ interface CityData {
   metaDescription: string;
   heroImage: string;
   heroDescription: string;
+  localImage: string;
   localContent: string[];
   popularVenues: string[];
   nearbyAreas: string[];
@@ -36,12 +37,12 @@ interface CityData {
 }
 
 const services = [
-  { icon: Music, title: "DJ Services", slug: "dj-services", desc: "Custom playlists and professional MCs who read the room and keep your guests on the dance floor." },
-  { icon: Camera, title: "Photo Booths", slug: "photo-booths", desc: "360 video booths and classic photo booths with instant prints, digital sharing, and custom branding." },
-  { icon: UtensilsCrossed, title: "Catering", slug: "catering", desc: "Chef-crafted menus with full dietary accommodations, from plated dinners to interactive food stations." },
-  { icon: Tent, title: "Event Rentals", slug: "event-rentals", desc: "Tents, furniture, decor, table settings, and game rentals that transform any venue." },
-  { icon: Wine, title: "Bar Services", slug: "bar-services", desc: "Licensed mobile bar with craft cocktails, professional bartenders, and a full non-alcoholic menu." },
-  { icon: Lightbulb, title: "Lighting & Audio", slug: "lighting-audio", desc: "Uplighting, dance floor effects, PA systems, wireless mics, and custom gobo projections." },
+  { icon: Music, title: "DJ Services", slug: "dj-services", desc: "Custom playlists and professional MCs who read the room and keep your guests on the dance floor.", image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&h=400&fit=crop" },
+  { icon: Camera, title: "Photo Booths", slug: "photo-booths", desc: "360 video booths and classic photo booths with instant prints, digital sharing, and custom branding.", image: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&h=400&fit=crop" },
+  { icon: UtensilsCrossed, title: "Catering", slug: "catering", desc: "Chef-crafted menus with full dietary accommodations, from plated dinners to interactive food stations.", image: "https://images.unsplash.com/photo-1555244162-803834f70033?w=600&h=400&fit=crop" },
+  { icon: Tent, title: "Event Rentals", slug: "event-rentals", desc: "Tents, furniture, decor, table settings, and game rentals that transform any venue.", image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&h=400&fit=crop" },
+  { icon: Wine, title: "Bar Services", slug: "bar-services", desc: "Licensed mobile bar with craft cocktails, professional bartenders, and a full non-alcoholic menu.", image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&h=400&fit=crop" },
+  { icon: Lightbulb, title: "Lighting & Audio", slug: "lighting-audio", desc: "Uplighting, dance floor effects, PA systems, wireless mics, and custom gobo projections.", image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop" },
 ];
 
 const citiesData: Record<string, CityData> = {
@@ -52,6 +53,7 @@ const citiesData: Record<string, CityData> = {
     metaDescription: "Full-service event entertainment in Toronto. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events across Toronto.",
     heroImage: "https://images.unsplash.com/photo-1517090504332-6f084180cadf?w=1920&q=80",
     heroDescription: "From King West lofts to Liberty Grand ballrooms, we bring world-class entertainment to every corner of Toronto. Over 300 events delivered across the city with a perfect 5.0 Google rating.",
+    localImage: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80",
     localContent: [
       "Toronto hosts some of the most diverse and vibrant events in Canada. Whether it is a waterfront wedding at the Distillery District, a corporate gala at the Royal Ontario Museum, or a rooftop celebration in King West, I DO Entertainment has the experience and equipment to match the energy of this city.",
       "Our team knows Toronto venues inside and out. We have worked at Liberty Grand, The Fermenting Cellar, Casa Loma, Palais Royale, The Carlu, Evergreen Brick Works, and dozens of boutique spaces across the city. That venue knowledge means we show up prepared with the right equipment, the right setup plan, and zero surprises on your event day.",
@@ -74,6 +76,7 @@ const citiesData: Record<string, CityData> = {
     metaDescription: "Premium event entertainment in Mississauga. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Mississauga and Peel Region.",
     heroImage: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&q=80",
     heroDescription: "Mississauga couples and corporate planners trust I DO Entertainment for full-service event production. From Lakefront Promenade celebrations to grand banquet hall weddings, we deliver flawless entertainment across Peel Region.",
+    localImage: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
     localContent: [
       "Mississauga is home to some of the GTA's most popular banquet halls and event venues. Spaces like Paramount Event Space, Versailles Convention Centre, Le Jardin, and the Waterside Inn host hundreds of weddings and corporate events each year, and I DO Entertainment has been a preferred vendor at many of them.",
       "The city's multicultural community means we regularly handle events spanning South Asian weddings with baraat processions and sangeet nights, Middle Eastern celebrations with traditional music integration, Caribbean parties, and classic Western receptions. Our DJs are fluent in every genre and our team understands the cultural nuances that make each event unique.",
@@ -96,6 +99,7 @@ const citiesData: Record<string, CityData> = {
     metaDescription: "Full-service event entertainment in Brampton. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Brampton.",
     heroImage: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1920&q=80",
     heroDescription: "Brampton is one of the fastest-growing event markets in the GTA, and I DO Entertainment has been serving the community for 8+ years. From grand banquet hall weddings to intimate backyard celebrations, we bring the same premium experience to every event.",
+    localImage: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800&q=80",
     localContent: [
       "Brampton's event scene has exploded in recent years with venues like Chateau Le Jardin, Embassy Grand Convention Centre, and Pearson Convention Centre hosting hundreds of celebrations annually. I DO Entertainment has built strong relationships with venues across the city, which means smoother load-in, better setup coordination, and a team that already knows the space.",
       "The South Asian wedding market in Brampton is one of the largest in the GTA. Our DJs carry extensive Bollywood, Bhangra, and Punjabi libraries, and our team understands the flow of multi-day celebrations from Mehndi to reception. We also produce corporate events, holiday parties, school dances, and community celebrations throughout Peel Region.",
@@ -118,6 +122,7 @@ const citiesData: Record<string, CityData> = {
     metaDescription: "Premium event entertainment in Vaughan. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Vaughan and York Region.",
     heroImage: "https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=1920&q=80",
     heroDescription: "Vaughan is home to some of the GTA's most stunning banquet halls and event venues. I DO Entertainment brings premium entertainment, flawless execution, and 8+ years of experience to every event in Vaughan and York Region.",
+    localImage: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80",
     localContent: [
       "Vaughan has become one of the premier event destinations in the GTA. Venues like Terrace Banquet Centre, Universal EventSpace, Hazelton Manor, and The Venetian host thousands of celebrations each year ranging from lavish Italian weddings to large-scale corporate productions.",
       "The Italian, Portuguese, and Jewish communities in Vaughan have a strong tradition of grand celebrations, and our team understands the cultural expectations that come with those events. From Hora dances to tarantella circles, from cocktail-heavy receptions to multi-course sit-down dinners, we tailor the entertainment to match the energy and traditions your family expects.",
@@ -140,6 +145,7 @@ const citiesData: Record<string, CityData> = {
     metaDescription: "Full-service event entertainment in Etobicoke. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Etobicoke.",
     heroImage: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1920&q=80",
     heroDescription: "Etobicoke offers some of the most charming and versatile event spaces in the west end of Toronto. I DO Entertainment brings full-service entertainment to every venue in Etobicoke, from historic estates to modern event halls.",
+    localImage: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
     localContent: [
       "Etobicoke sits at the crossroads of Toronto and Mississauga, making it an ideal location for events drawing guests from across the GTA. Venues like The Old Mill Toronto, The Waterside Inn, Islington Golf Club, and the Humber Valley offer a mix of historic charm and modern elegance that pairs perfectly with premium entertainment.",
       "The neighborhood character of Etobicoke means events here tend to feel more intimate and personal compared to downtown Toronto. Whether it is a garden wedding at a Humber River estate, a retirement dinner at a golf club, or a holiday party at a waterfront restaurant, the atmosphere calls for entertainment that matches the setting without overpowering it.",
@@ -162,6 +168,7 @@ const citiesData: Record<string, CityData> = {
     metaDescription: "Premium event entertainment in Oakville. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Oakville and Halton Region.",
     heroImage: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80",
     heroDescription: "Oakville's elegant venues and lakefront setting create the perfect backdrop for unforgettable events. I DO Entertainment delivers refined, full-service entertainment tailored to Oakville's sophisticated event scene.",
+    localImage: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&q=80",
     localContent: [
       "Oakville is one of the GTA's most sought-after event destinations, known for its waterfront charm, estate properties, and upscale venues. Spaces like Paletta Lakefront, Glen Abbey Golf Club, Oakville Conference Centre, and The Raithby offer settings that demand entertainment to match.",
       "Events in Oakville tend to lean toward refined elegance. Our team excels at reading the room and matching the energy, whether that means a jazz trio during cocktails transitioning to a high-energy dance set, or sophisticated uplighting that transforms a lakefront tent into a magazine-worthy reception space.",
@@ -184,6 +191,7 @@ const citiesData: Record<string, CityData> = {
     metaDescription: "Full-service event entertainment in North York. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in North York.",
     heroImage: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=1920&q=80",
     heroDescription: "North York is home to some of the GTA's most iconic banquet halls and event venues. I DO Entertainment delivers full-service entertainment for weddings, corporate events, and private celebrations across the entire North York area.",
+    localImage: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
     localContent: [
       "North York's event scene is anchored by legendary venues like The Montecassino, Grand Luxe Event Boutique, York Mills Gallery, and the Toronto Botanical Garden. These spaces host everything from 100-person intimate dinners to 600-guest grand celebrations, and I DO Entertainment has produced events at many of them.",
       "The cultural diversity of North York means we regularly produce Persian, Korean, Chinese, Filipino, South Asian, and multicultural events, each with unique music requirements, traditions, and energy levels. Our DJ team carries libraries spanning every genre and our MCs adapt their style to match the cultural tone of your celebration.",
@@ -351,31 +359,49 @@ export default async function AreaPage({
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((svc) => {
               const Icon = svc.icon;
               return (
                 <Link
                   key={svc.slug}
                   href={`/services/${svc.slug}`}
-                  className="group bg-white rounded-2xl p-8 border border-black/5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                  className="service-card group bg-white rounded-2xl overflow-hidden shadow-sm border border-black/5"
                 >
-                  <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gold/20 transition-colors">
-                    <Icon size={24} className="text-gold-dark" />
+                  {/* Image */}
+                  <div className="relative h-48 overflow-hidden">
+                    <div
+                      className="service-image absolute inset-0 bg-cover bg-center transition-transform duration-700"
+                      style={{ backgroundImage: `url('${svc.image}')` }}
+                      role="img"
+                      aria-label={`${svc.title} in ${city.name} - I DO Entertainment`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-4 left-4">
+                      <div className="w-10 h-10 bg-gold rounded-xl flex items-center justify-center">
+                        <Icon size={20} className="text-charcoal" />
+                      </div>
+                    </div>
                   </div>
-                  <h3
-                    className="text-xl text-charcoal mb-2"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {svc.title.toUpperCase()}
-                  </h3>
-                  <p className="text-charcoal/60 text-sm leading-relaxed mb-4">
-                    {svc.desc}
-                  </p>
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-charcoal group-hover:text-gold-dark transition-colors">
-                    Learn More
-                    <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                  </span>
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3
+                      className="text-2xl text-charcoal mb-3"
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      {svc.title.toUpperCase()}
+                    </h3>
+                    <p className="text-charcoal/60 leading-relaxed text-sm mb-4">
+                      {svc.desc}
+                    </p>
+                    <span
+                      className="inline-flex items-center gap-1 text-sm font-semibold text-charcoal group-hover:text-gold-dark transition-colors"
+                      style={{ fontFamily: "var(--font-accent)" }}
+                    >
+                      Learn More
+                      <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
                 </Link>
               );
             })}
@@ -384,76 +410,107 @@ export default async function AreaPage({
       </section>
 
       {/* ═══════════ LOCAL CONTENT ═══════════ */}
-      <section className="py-24 md:py-32 bg-charcoal">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <span
-              className="text-base text-gold tracking-[0.2em] uppercase block mb-3 italic"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              Why {city.name}
-            </span>
-            <h2
-              className="text-5xl md:text-6xl text-white mb-4"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              LOCAL EXPERTISE
-            </h2>
-          </div>
-
-          <div className="space-y-6">
-            {city.localContent.map((p, i) => (
-              <p key={i} className="text-white/60 text-lg leading-relaxed">
-                {p}
-              </p>
-            ))}
-          </div>
-
-          {/* Popular Venues */}
-          <div className="mt-12 pt-10 border-t border-white/10">
-            <h3
-              className="text-2xl text-white mb-6"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              POPULAR {city.name.toUpperCase()} VENUES WE WORK WITH
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {city.popularVenues.map((venue) => (
+      <section className="py-24 md:py-32 bg-charcoal relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[100px]" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Left - Image */}
+            <div className="relative">
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
                 <div
-                  key={venue}
-                  className="flex items-center gap-2 bg-white/5 rounded-full px-5 py-2.5 border border-white/10"
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url('${city.localImage}')` }}
+                  role="img"
+                  aria-label={`Event entertainment in ${city.name}`}
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-gold rounded-2xl p-6 shadow-2xl max-w-[240px]">
+                <div
+                  className="text-4xl font-bold text-charcoal mb-1"
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
-                  <Check size={14} className="text-gold" />
-                  <span className="text-white/70 text-sm">{venue}</span>
+                  500+
                 </div>
-              ))}
+                <div className="text-sm text-charcoal/70 font-medium">
+                  Successful events across {city.name} and the GTA
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Nearby Areas */}
-          <div className="mt-10 pt-10 border-t border-white/10">
-            <h3
-              className="text-lg text-white/50 mb-4"
-              style={{ fontFamily: "var(--font-accent)" }}
-            >
-              Also serving nearby:
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {city.nearbyAreas.map((area) => {
-                const areaSlug = area.toLowerCase().replace(/\s+/g, "-");
-                const hasPage = citiesData[areaSlug];
-                return hasPage ? (
-                  <Link
-                    key={area}
-                    href={`/areas/${areaSlug}`}
-                    className="text-gold/70 hover:text-gold text-sm transition-colors underline underline-offset-2"
-                  >
-                    {area}
-                  </Link>
-                ) : (
-                  <span key={area} className="text-white/40 text-sm">{area}</span>
-                );
-              })}
+            {/* Right - Content */}
+            <div>
+              <span
+                className="text-base text-gold tracking-[0.2em] block mb-3 italic"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                Why {city.name}
+              </span>
+              <h2
+                className="text-5xl md:text-6xl text-white mb-6 leading-tight"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                LOCAL
+                <br />
+                <span
+                  className="text-gold italic"
+                  style={{ fontFamily: "var(--font-serif)" }}
+                >
+                  Expertise
+                </span>
+              </h2>
+
+              <div className="space-y-5 mb-10">
+                {city.localContent.map((p, i) => (
+                  <p key={i} className="text-white/60 leading-relaxed">
+                    {p}
+                  </p>
+                ))}
+              </div>
+
+              {/* Popular Venues */}
+              <div className="mb-8">
+                <h3
+                  className="text-lg text-white mb-4"
+                  style={{ fontFamily: "var(--font-accent)" }}
+                >
+                  Venues we work with in {city.name}:
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {city.popularVenues.map((venue) => (
+                    <div
+                      key={venue}
+                      className="flex items-center gap-2 bg-white/5 rounded-full px-4 py-2 border border-white/10"
+                    >
+                      <Check size={14} className="text-gold" />
+                      <span className="text-white/70 text-sm">{venue}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Nearby Areas */}
+              <div className="pt-6 border-t border-white/10">
+                <span className="text-sm text-white/40 mr-3">Also serving:</span>
+                {city.nearbyAreas.map((area, i) => {
+                  const areaSlug = area.toLowerCase().replace(/\s+/g, "-");
+                  const hasPage = citiesData[areaSlug];
+                  return (
+                    <span key={area}>
+                      {hasPage ? (
+                        <Link
+                          href={`/areas/${areaSlug}`}
+                          className="text-gold/70 hover:text-gold text-sm transition-colors underline underline-offset-2"
+                        >
+                          {area}
+                        </Link>
+                      ) : (
+                        <span className="text-white/40 text-sm">{area}</span>
+                      )}
+                      {i < city.nearbyAreas.length - 1 && <span className="text-white/20 mx-2">|</span>}
+                    </span>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
