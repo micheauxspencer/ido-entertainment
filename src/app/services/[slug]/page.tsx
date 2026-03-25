@@ -1,0 +1,623 @@
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import {
+  Check,
+  ArrowRight,
+  Star,
+  Phone,
+  Mail,
+  MapPin,
+  ChevronRight,
+} from "lucide-react";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import HoneyBookForm from "@/components/HoneyBookForm";
+import { TrustBar } from "@/components/Counter";
+
+/* ─── Service Data ─── */
+interface ServiceData {
+  slug: string;
+  title: string;
+  shortTitle: string;
+  metaTitle: string;
+  metaDescription: string;
+  heroHeadline: string;
+  heroSubline: string;
+  heroDescription: string;
+  heroImage: string;
+  features: { title: string; desc: string }[];
+  galleryImages: string[];
+  faqs: { q: string; a: string }[];
+  testimonial: { name: string; text: string; event: string; date: string };
+  ctaHeadline: string;
+}
+
+const servicesData: Record<string, ServiceData> = {
+  "dj-services": {
+    slug: "dj-services",
+    title: "DJ Services",
+    shortTitle: "DJ Services",
+    metaTitle: "Professional DJ Services Toronto | Wedding & Event DJs - I DO Entertainment",
+    metaDescription: "Toronto's top-rated event DJs for weddings, corporate events, and private parties. Custom playlists, MC services, and state-of-the-art sound. Get a free quote today.",
+    heroHeadline: "SET THE PERFECT",
+    heroSubline: "Mood",
+    heroDescription: "Our professional DJs don't just play music - they read the room, curate the energy, and keep your guests dancing all night. Custom playlists for every moment, from ceremony to last call.",
+    heroImage: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1920&q=80",
+    features: [
+      { title: "Custom Playlist Curation", desc: "We build your playlist around your taste, your crowd, and your event timeline - not a generic setlist." },
+      { title: "Professional MC Services", desc: "Seamless announcements, introductions, and crowd engagement that keeps the energy flowing." },
+      { title: "State-of-the-Art Equipment", desc: "Premium sound systems, wireless mics, and backup gear so nothing interrupts your event." },
+      { title: "Genre Versatility", desc: "From Top 40 to Bollywood, Latin to Classic Rock - our DJs are fluent in every genre your guests love." },
+      { title: "Ceremony + Reception Coverage", desc: "Full-day packages covering ceremony music, cocktail hour, dinner, and the dance floor." },
+      { title: "Lighting Integration", desc: "Optional dance floor lighting, uplighting, and effects that sync with the music for a club-quality experience." },
+    ],
+    galleryImages: [
+      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=400&fit=crop",
+    ],
+    faqs: [
+      { q: "How far in advance should we book a DJ?", a: "We recommend booking 3-6 months ahead for wedding dates. Popular dates (summer Saturdays) book out 6-12 months in advance. Corporate events typically need 4-6 weeks lead time." },
+      { q: "Can we provide our own song requests?", a: "Absolutely. We'll send you a planning form where you can share must-play songs, do-not-play lists, and any special moment songs. Your DJ will build the set around your preferences." },
+      { q: "Do you provide equipment or do we need to rent separately?", a: "Everything is included - speakers, subwoofers, mixer, microphones, and all cables. We do a full sound check before guests arrive. For larger venues (200+), we bring additional speakers at no extra charge." },
+      { q: "What happens if the DJ gets sick on our event day?", a: "We always have backup DJs available. In 8+ years, we've never missed an event. Your celebration is guaranteed." },
+    ],
+    testimonial: { name: "Nicholas Vecchiarelli", text: "I DO Entertainment made our wedding absolutely incredible. The DJ read the room perfectly and the lighting transformed our venue. Every single guest commented on how amazing the atmosphere was.", event: "Wedding", date: "Oct 2025" },
+    ctaHeadline: "BOOK YOUR DJ",
+  },
+  "photo-booths": {
+    slug: "photo-booths",
+    title: "Photo Booths",
+    shortTitle: "Photo Booths",
+    metaTitle: "Photo Booth Rental Toronto & GTA | 360 Booth - I DO Entertainment",
+    metaDescription: "Premium photo booth and 360 video booth rentals in Toronto. Instant prints, digital sharing, custom branding, and props included. Book your event today.",
+    heroHeadline: "CAPTURE EVERY",
+    heroSubline: "Moment",
+    heroDescription: "State-of-the-art photo booths and 360 video experiences that give your guests instant keepsakes and shareable content. Custom branding, props, and an attendant included with every package.",
+    heroImage: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1920&q=80",
+    features: [
+      { title: "360 Video Booth", desc: "Cinematic slow-motion videos from every angle. Guests get instant shareable clips with custom overlays." },
+      { title: "Classic Photo Booth", desc: "High-quality DSLR photos with studio lighting, green screen options, and instant 4x6 prints." },
+      { title: "Custom Branding", desc: "Your event name, hashtag, logo, or wedding monogram on every print and digital share." },
+      { title: "Instant Digital Sharing", desc: "Guests text or email their photos instantly. QR code gallery for all event photos." },
+      { title: "Premium Props Included", desc: "Curated prop selection themed to your event - not dollar store quality." },
+      { title: "Dedicated Attendant", desc: "A trained booth attendant manages the line, helps with props, and ensures everything runs smoothly." },
+    ],
+    galleryImages: [
+      "https://images.unsplash.com/photo-1540575467063-178a50e2fd60?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&h=400&fit=crop",
+    ],
+    faqs: [
+      { q: "What's the difference between a photo booth and a 360 booth?", a: "A classic photo booth captures posed photos with instant prints. A 360 booth records cinematic slow-motion video as the camera rotates around you - think red carpet content for social media." },
+      { q: "How much space does the booth need?", a: "A classic booth needs about 8x8 feet. The 360 platform needs about 10x10 feet. We'll confirm space requirements during your consultation." },
+      { q: "Are prints included or just digital?", a: "Both. Every guest gets unlimited instant prints AND digital copies they can text/email to themselves. You also receive a full gallery after the event." },
+      { q: "Can you set up outdoors?", a: "Yes, with a covered area. We need protection from rain and direct sunlight for the best photo quality. Tented outdoor events work perfectly." },
+    ],
+    testimonial: { name: "Alex D", text: "We hired I DO for our corporate gala and they delivered beyond expectations. From the photo booth to the bar service, everything was seamless and professional. Would book again in a heartbeat.", event: "Corporate Gala", date: "Sep 2025" },
+    ctaHeadline: "BOOK YOUR BOOTH",
+  },
+  "catering": {
+    slug: "catering",
+    title: "Catering Services",
+    shortTitle: "Catering",
+    metaTitle: "Event Catering Toronto | Wedding & Corporate Catering - I DO Entertainment",
+    metaDescription: "Premium event catering in Toronto and GTA. Custom menus for weddings, corporate events, and private parties. Dietary accommodations, tastings, and full service included.",
+    heroHeadline: "EXQUISITE",
+    heroSubline: "Cuisine",
+    heroDescription: "Talented chefs crafting custom menus tailored to your event, your guests, and your vision. From elegant plated dinners to interactive food stations, we make every bite memorable.",
+    heroImage: "https://images.unsplash.com/photo-1555244162-803834f70033?w=1920&q=80",
+    features: [
+      { title: "Custom Menu Design", desc: "Our chef works with you to design a menu that matches your theme, budget, and dietary requirements." },
+      { title: "Full Dietary Accommodations", desc: "Vegan, gluten-free, halal, kosher, allergy-friendly options - every guest is taken care of." },
+      { title: "Complimentary Tasting", desc: "For events over 100 guests, enjoy a complimentary tasting session to finalize your menu selections." },
+      { title: "Multiple Service Styles", desc: "Plated dinner, family style, buffet, food stations, or passed appetizers - your call." },
+      { title: "Professional Service Staff", desc: "Uniformed servers, kitchen staff, and a catering manager on-site to ensure flawless execution." },
+      { title: "Setup & Cleanup Included", desc: "We handle everything from table settings to kitchen cleanup. You just enjoy the meal." },
+    ],
+    galleryImages: [
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop",
+    ],
+    faqs: [
+      { q: "What's the minimum guest count for catering?", a: "We cater events from 30 to 500+ guests. For smaller gatherings under 30, we can recommend partner caterers better suited to intimate events." },
+      { q: "Can you accommodate multiple dietary restrictions at one event?", a: "Absolutely. We regularly handle events with 5+ dietary requirements simultaneously. Each restricted meal is individually labeled and tracked." },
+      { q: "Do you provide tables, linens, and dinnerware?", a: "We can include full table settings as part of your catering package, or coordinate with your existing rental setup." },
+      { q: "How far in advance should we finalize the menu?", a: "We recommend finalizing 4-6 weeks before your event. Initial menu planning should start 2-3 months out for weddings." },
+    ],
+    testimonial: { name: "DJ Salaya-Nguyen", text: "The team at I DO is next level. They handled everything for our event - catering, rentals, audio setup - and it all went off without a hitch. True professionals who care about every detail.", event: "Private Party", date: "Jul 2025" },
+    ctaHeadline: "BOOK YOUR CATERING",
+  },
+  "event-rentals": {
+    slug: "event-rentals",
+    title: "Event Rentals",
+    shortTitle: "Event Rentals",
+    metaTitle: "Event Rentals Toronto | Furniture, Tents & Decor Rental - I DO Entertainment",
+    metaDescription: "Premium event rental company in Toronto and GTA. Tents, furniture, decor, table settings, games, and more for weddings and corporate events. Free delivery available.",
+    heroHeadline: "TRANSFORM YOUR",
+    heroSubline: "Venue",
+    heroDescription: "Premium tents, stylish furniture, elegant decor, and game rentals that elevate any space. From intimate garden parties to grand ballroom events, we have everything you need.",
+    heroImage: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&q=80",
+    features: [
+      { title: "Tent & Canopy Rentals", desc: "Frame tents, pole tents, and clear-top canopies sized from 20x20 to 60x120 for any outdoor event." },
+      { title: "Furniture Collections", desc: "Lounge sets, farm tables, chiavari chairs, ghost chairs, and modern furniture that match any aesthetic." },
+      { title: "Decor & Styling", desc: "Centerpieces, backdrops, arches, table runners, and custom decor elements designed for your theme." },
+      { title: "Table Settings", desc: "China, glassware, flatware, charger plates, and linen in multiple colors and styles." },
+      { title: "Games & Entertainment", desc: "Lawn games, arcade machines, casino tables, and interactive entertainment rentals." },
+      { title: "Delivery & Setup", desc: "We deliver, set up, and pick up everything. Your venue is transformed and restored with zero effort on your part." },
+    ],
+    galleryImages: [
+      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=400&fit=crop",
+    ],
+    faqs: [
+      { q: "Do you deliver and set up the rentals?", a: "Yes. Delivery, full setup, and pickup are included in our rental packages. We arrive hours before your event and handle everything." },
+      { q: "Can I mix and match rental items?", a: "Absolutely. We'll help you build a custom rental package that fits your vision and budget. No preset bundles required." },
+      { q: "What if something gets damaged during the event?", a: "Normal wear and tear is covered. We carry insurance for all our rental inventory. Excessive damage may incur a replacement fee, but we'll walk you through our damage policy upfront." },
+      { q: "How far in advance should I book rentals?", a: "4-8 weeks for standard items. Specialty items and peak season (May-October) should be booked 2-3 months out." },
+    ],
+    testimonial: { name: "Nicholas Vecchiarelli", text: "I DO Entertainment made our wedding absolutely incredible. The DJ read the room perfectly and the lighting transformed our venue. Every single guest commented on how amazing the atmosphere was.", event: "Wedding", date: "Oct 2025" },
+    ctaHeadline: "BOOK YOUR RENTALS",
+  },
+  "bar-services": {
+    slug: "bar-services",
+    title: "Bar Services",
+    shortTitle: "Bar Services",
+    metaTitle: "Mobile Bar Services Toronto | Bartenders for Events - I DO Entertainment",
+    metaDescription: "Premium mobile bar and bartending services in Toronto. Craft cocktails, professional bartenders, and full bar setup for weddings and events. Licensed and insured.",
+    heroHeadline: "ELEVATE YOUR",
+    heroSubline: "Bar",
+    heroDescription: "Premium mobile bar service with craft cocktails, professional bartenders, and a stunning setup. Licensed, insured, and equipped to handle events from 50 to 500+ guests.",
+    heroImage: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1920&q=80",
+    features: [
+      { title: "Craft Cocktail Menu", desc: "Custom signature cocktails designed for your event, plus a full bar of classic drinks your guests know and love." },
+      { title: "Professional Bartenders", desc: "Experienced, personable bartenders who keep the line moving and the drinks perfect." },
+      { title: "Full Bar Setup", desc: "We bring the bar, glassware, ice, garnishes, mixers, and tools. You just tell us where to set up." },
+      { title: "Licensed & Insured", desc: "Fully licensed with Smart Serve certification. Liability insurance included for your peace of mind." },
+      { title: "Flexible Packages", desc: "Open bar, cash bar, drink tickets, or consumption-based billing - whatever fits your budget." },
+      { title: "Non-Alcoholic Options", desc: "Mocktail menu, craft sodas, and specialty non-alcoholic beverages so every guest feels included." },
+    ],
+    galleryImages: [
+      "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1574096079513-d8259312b785?w=600&h=400&fit=crop",
+    ],
+    faqs: [
+      { q: "Do we need to provide the alcohol?", a: "We can work either way. We can source and provide all beverages, or you can purchase your own and we'll handle everything else. We'll advise on quantities based on your guest count." },
+      { q: "How many bartenders do we need?", a: "General rule: 1 bartender per 50-75 guests. For cocktail-heavy events, we recommend 1 per 50. We'll advise based on your event format." },
+      { q: "Can you create custom signature cocktails?", a: "Yes! We'll work with you to design 2-3 signature drinks that match your event theme, color scheme, or personal taste." },
+      { q: "Are you licensed and insured?", a: "Yes. All our bartenders are Smart Serve certified. We carry full commercial liability insurance and can provide a certificate for your venue." },
+    ],
+    testimonial: { name: "Alex D", text: "We hired I DO for our corporate gala and they delivered beyond expectations. From the photo booth to the bar service, everything was seamless and professional. Would book again in a heartbeat.", event: "Corporate Gala", date: "Sep 2025" },
+    ctaHeadline: "BOOK YOUR BAR",
+  },
+  "lighting-audio": {
+    slug: "lighting-audio",
+    title: "Lighting & Audio",
+    shortTitle: "Lighting & Audio",
+    metaTitle: "Event Lighting & Audio Rental Toronto | AV Services - I DO Entertainment",
+    metaDescription: "Professional event lighting and sound system rentals in Toronto. Uplighting, dance floor lighting, PA systems, and wireless microphones for weddings and events.",
+    heroHeadline: "CREATE THE PERFECT",
+    heroSubline: "Atmosphere",
+    heroDescription: "Expert lighting design and high-quality audio systems that transform any venue. From dramatic uplighting to crystal-clear speeches, we set the mood and ensure everyone is heard.",
+    heroImage: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1920&q=80",
+    features: [
+      { title: "Uplighting & Wash Lighting", desc: "Color-matched LED uplighting that transforms walls, ceilings, and columns to match your event palette." },
+      { title: "Dance Floor Lighting", desc: "Moving heads, laser effects, fog machines, and intelligent lighting that syncs with the music." },
+      { title: "PA & Sound Systems", desc: "Professional speakers, subwoofers, and monitors sized for your venue - from intimate rooms to 500+ guest halls." },
+      { title: "Wireless Microphones", desc: "Lapel, handheld, and headset mics for speeches, toasts, and ceremonies. Backup mics always on standby." },
+      { title: "String & Fairy Lights", desc: "Overhead string lighting, fairy light curtains, and canopy lighting for magical outdoor and indoor spaces." },
+      { title: "Custom Gobo Projections", desc: "Project your monogram, logo, or custom design onto walls or dance floors with precision gobo lights." },
+    ],
+    galleryImages: [
+      "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&h=400&fit=crop",
+    ],
+    faqs: [
+      { q: "Can you visit our venue before the event?", a: "Yes. For weddings and large events, we include a complimentary venue walkthrough to plan lighting placement, power requirements, and sound system positioning." },
+      { q: "Do you handle power and electrical requirements?", a: "We bring our own power distribution and cables. For outdoor events or venues with limited power, we can arrange generator rentals." },
+      { q: "Can lighting colors be customized to our theme?", a: "Absolutely. Our LED fixtures can be set to any color. We'll color-match to your decor, invitations, or any specific hex code you provide." },
+      { q: "Is a technician included?", a: "Yes. Every lighting and audio package includes an on-site technician who manages levels, troubleshoots, and ensures everything runs perfectly throughout your event." },
+    ],
+    testimonial: { name: "Nicholas Vecchiarelli", text: "I DO Entertainment made our wedding absolutely incredible. The DJ read the room perfectly and the lighting transformed our venue. Every single guest commented on how amazing the atmosphere was.", event: "Wedding", date: "Oct 2025" },
+    ctaHeadline: "BOOK YOUR SETUP",
+  },
+};
+
+/* ─── Static Params ─── */
+export function generateStaticParams() {
+  return Object.keys(servicesData).map((slug) => ({ slug }));
+}
+
+/* ─── Metadata ─── */
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const svc = servicesData[slug];
+  if (!svc) return { title: "Service Not Found" };
+  return {
+    title: svc.metaTitle,
+    description: svc.metaDescription,
+    alternates: {
+      canonical: `https://idoentertainment.ca/services/${svc.slug}`,
+    },
+    openGraph: {
+      title: svc.metaTitle,
+      description: svc.metaDescription,
+      type: "website",
+      url: `https://idoentertainment.ca/services/${svc.slug}`,
+      siteName: "I DO Entertainment",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: svc.metaTitle,
+      description: svc.metaDescription,
+    },
+  };
+}
+
+/* ─── Page Component ─── */
+export default async function ServicePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const svc = servicesData[slug];
+  if (!svc) notFound();
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: svc.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: svc.title,
+    description: svc.heroDescription,
+    url: `https://idoentertainment.ca/services/${svc.slug}`,
+    provider: {
+      "@type": "EventPlanningBusiness",
+      name: "I DO Entertainment",
+      url: "https://idoentertainment.ca",
+      telephone: "+14378763359",
+    },
+    areaServed: { "@type": "City", name: "Toronto" },
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <Navbar />
+
+      {/* ═══════════ HERO ═══════════ */}
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-charcoal">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url('${svc.heroImage}')` }}
+          role="img"
+          aria-label={`${svc.title} by I DO Entertainment Toronto`}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-20">
+          {/* Breadcrumb */}
+          <div className="flex items-center justify-center gap-2 mb-8 text-sm text-white/50">
+            <Link href="/" className="hover:text-gold transition-colors">Home</Link>
+            <ChevronRight size={14} />
+            <Link href="/#services" className="hover:text-gold transition-colors">Services</Link>
+            <ChevronRight size={14} />
+            <span className="text-gold">{svc.title}</span>
+          </div>
+
+          <h1 className="mb-6">
+            <span
+              className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[0.9] tracking-tight"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              {svc.heroHeadline}
+            </span>
+            <span
+              className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gold italic mt-2"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              {svc.heroSubline}
+            </span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+            {svc.heroDescription}
+          </p>
+
+          <a
+            href="#quote"
+            className="btn-primary pulse-ring inline-flex items-center gap-2 bg-gold text-charcoal px-10 py-4 rounded-full text-lg font-bold tracking-wide uppercase"
+            style={{ fontFamily: "var(--font-accent)" }}
+          >
+            Get a Free Quote
+            <ArrowRight size={20} />
+          </a>
+        </div>
+      </section>
+
+      {/* ═══════════ TRUST BAR ═══════════ */}
+      <TrustBar />
+
+      {/* ═══════════ WHAT'S INCLUDED ═══════════ */}
+      <section className="py-24 md:py-32 bg-off-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span
+              className="text-lg text-gold-dark tracking-[0.15em] block mb-3 italic"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              What You Get
+            </span>
+            <h2
+              className="text-5xl md:text-7xl text-charcoal mb-4"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              WHAT&apos;S INCLUDED
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {svc.features.map((f, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-2xl p-8 border border-black/5 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="w-10 h-10 bg-gold/15 rounded-xl flex items-center justify-center mb-4">
+                  <Check size={20} className="text-gold-dark" />
+                </div>
+                <h3
+                  className="text-xl text-charcoal mb-2"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  {f.title.toUpperCase()}
+                </h3>
+                <p className="text-charcoal/60 text-sm leading-relaxed">
+                  {f.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ HOW IT WORKS ═══════════ */}
+      <section className="py-24 md:py-32 bg-charcoal">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span
+              className="text-lg text-gold tracking-[0.15em] block mb-3 italic"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Simple Process
+            </span>
+            <h2
+              className="text-5xl md:text-7xl text-white mb-4"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              HOW IT WORKS
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { step: "01", title: "Free Consultation", desc: "Tell us about your event vision, guest count, venue, and budget. We'll recommend the perfect package." },
+              { step: "02", title: "Custom Planning", desc: "We design a tailored plan with timeline, equipment list, and all logistics handled. You approve, we execute." },
+              { step: "03", title: "Flawless Execution", desc: "We arrive early, set up everything, run your event seamlessly, and handle all cleanup. You just enjoy." },
+            ].map((s, i) => (
+              <div key={i} className="text-center">
+                <div
+                  className="text-6xl text-gold/20 mb-4"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  {s.step}
+                </div>
+                <h3
+                  className="text-2xl text-white mb-3"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  {s.title.toUpperCase()}
+                </h3>
+                <p className="text-white/50 text-sm leading-relaxed">
+                  {s.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ GALLERY ═══════════ */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span
+              className="text-lg text-gold-dark tracking-[0.15em] block mb-3 italic"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Our Work
+            </span>
+            <h2
+              className="text-5xl md:text-7xl text-charcoal mb-4"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              GALLERY
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {svc.galleryImages.map((img, i) => (
+              <div
+                key={i}
+                className="aspect-[4/3] rounded-2xl overflow-hidden"
+              >
+                <div
+                  className="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-700"
+                  style={{ backgroundImage: `url('${img}')` }}
+                  role="img"
+                  aria-label={`${svc.title} gallery photo ${i + 1} - I DO Entertainment`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ FAQ ═══════════ */}
+      <section className="py-24 md:py-32 bg-off-white">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span
+              className="text-lg text-gold-dark tracking-[0.15em] block mb-3 italic"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Common Questions
+            </span>
+            <h2
+              className="text-5xl md:text-7xl text-charcoal mb-4"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              FAQ
+            </h2>
+          </div>
+
+          <div className="space-y-6">
+            {svc.faqs.map((faq, i) => (
+              <details
+                key={i}
+                className="group bg-white rounded-2xl border border-black/5 overflow-hidden"
+              >
+                <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
+                  <span className="font-semibold text-charcoal pr-4" style={{ fontFamily: "var(--font-accent)" }}>
+                    {faq.q}
+                  </span>
+                  <ChevronRight
+                    size={20}
+                    className="text-charcoal/30 group-open:rotate-90 transition-transform flex-shrink-0"
+                  />
+                </summary>
+                <div className="px-6 pb-6 text-charcoal/60 text-sm leading-relaxed -mt-2">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ TESTIMONIAL ═══════════ */}
+      <section className="py-24 md:py-32 bg-charcoal">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <div className="flex justify-center gap-1 mb-6">
+            {Array(5)
+              .fill(null)
+              .map((_, i) => (
+                <Star key={i} size={24} className="fill-gold text-gold" />
+              ))}
+          </div>
+          <blockquote
+            className="text-xl md:text-2xl text-white/80 leading-relaxed mb-8 italic"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            &ldquo;{svc.testimonial.text}&rdquo;
+          </blockquote>
+          <div>
+            <div className="text-white font-semibold" style={{ fontFamily: "var(--font-accent)" }}>
+              {svc.testimonial.name}
+            </div>
+            <div className="text-white/40 text-sm">
+              {svc.testimonial.event} &middot; {svc.testimonial.date}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ CTA + CONTACT ═══════════ */}
+      <section id="quote" className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Left */}
+            <div>
+              <span
+                className="text-lg text-gold-dark tracking-[0.15em] block mb-3 italic"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                Ready to Start?
+              </span>
+              <h2
+                className="text-5xl md:text-6xl text-charcoal mb-6"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                {svc.ctaHeadline}
+              </h2>
+              <p className="text-charcoal/60 text-lg leading-relaxed mb-10">
+                Tell us about your event and we&apos;ll put together a custom
+                {" "}{svc.shortTitle.toLowerCase()} package tailored to your vision,
+                venue, and budget.
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center">
+                    <Phone size={20} className="text-gold-dark" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-charcoal/50 uppercase tracking-wider mb-0.5 italic" style={{ fontFamily: "var(--font-serif)" }}>Call Us</div>
+                    <a href="tel:+14378763359" className="text-charcoal font-medium hover:text-gold-dark transition-colors">(437) 876-3359</a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center">
+                    <Mail size={20} className="text-gold-dark" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-charcoal/50 uppercase tracking-wider mb-0.5 italic" style={{ fontFamily: "var(--font-serif)" }}>Email Us</div>
+                    <a href="mailto:info@idoentertainment.ca" className="text-charcoal font-medium hover:text-gold-dark transition-colors">info@idoentertainment.ca</a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center">
+                    <MapPin size={20} className="text-gold-dark" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-charcoal/50 uppercase tracking-wider mb-0.5 italic" style={{ fontFamily: "var(--font-serif)" }}>Service Area</div>
+                    <span className="text-charcoal font-medium">Toronto, Mississauga, Brampton, Vaughan &amp; GTA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right - Form */}
+            <HoneyBookForm />
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  );
+}
