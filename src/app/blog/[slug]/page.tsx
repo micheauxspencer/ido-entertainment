@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Clock, ChevronRight } from "lucide-react";
 import { compile, run } from "@mdx-js/mdx";
-import * as runtime from "react/jsx-runtime";
+import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { mdxComponents } from "@/components/MDXComponents";
@@ -49,7 +49,9 @@ export default async function BlogPost({
   // Compile and run MDX
   const compiled = await compile(content, { outputFormat: "function-body" });
   const { default: MDXContent } = await run(String(compiled), {
-    ...(runtime as Record<string, unknown>),
+    jsx,
+    jsxs,
+    Fragment,
     baseUrl: import.meta.url,
   });
 
