@@ -214,50 +214,44 @@ export default function Home() {
       </section>
 
       {/* ═══════════ TRUSTED BY ═══════════ */}
-      <section className="bg-charcoal border-t border-white/10 py-12 overflow-hidden">
-        <div className="text-center mb-8">
-          <span
-            className="text-base text-gold-dark tracking-[0.15em] italic"
-            style={{ fontFamily: "var(--font-serif)" }}
-          >
-            Trusted by leading brands
-          </span>
-        </div>
-        <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-charcoal to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-charcoal to-transparent z-10" />
-          <div className="animate-marquee flex items-center gap-12 md:gap-20 whitespace-nowrap">
-            {[...Array(2)].map((_, setIdx) => (
-              <div key={setIdx} className="flex items-center gap-12 md:gap-20 shrink-0">
-                {[
-                  "Liberty Group",
-                  "Casa Loma",
-                  "Toronto Raptors",
-                  "Holt Renfrew",
-                  "Scotiabank",
-                  "TD",
-                  "McDonald's",
-                  "Mitsubishi",
-                  "SDI Marketing",
-                  "TIFF",
-                  "Disney",
-                  "Delta Hotels",
-                  "Westin",
-                  "Sheraton",
-                  "McCain's",
-                  "Yamaha",
-                  "MLS",
-                  "Pepsi",
-                ].map((name) => (
-                  <span
-                    key={name}
-                    className="text-white/40 hover:text-white/80 text-sm md:text-base tracking-widest uppercase transition-colors duration-300 shrink-0"
-                    style={{ fontFamily: "var(--font-accent)" }}
-                  >
-                    {name}
-                  </span>
-                ))}
-              </div>
+      <section className="bg-charcoal border-t border-white/10 py-14">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <span
+              className="text-base text-gold-dark tracking-[0.15em] italic"
+              style={{ fontFamily: "var(--font-serif)" }}
+            >
+              Trusted by leading brands
+            </span>
+          </div>
+          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-5">
+            {[
+              "Liberty Group",
+              "Casa Loma",
+              "Toronto Raptors",
+              "Holt Renfrew",
+              "Scotiabank",
+              "TD",
+              "McDonald's",
+              "Mitsubishi",
+              "SDI Marketing",
+              "TIFF",
+              "Disney",
+              "Delta Hotels",
+              "Westin",
+              "Sheraton",
+              "McCain's",
+              "Yamaha",
+              "MLS",
+              "Pepsi",
+            ].map((name) => (
+              <span
+                key={name}
+                className="text-white/30 text-xs md:text-sm tracking-[0.15em] uppercase"
+                style={{ fontFamily: "var(--font-accent)" }}
+              >
+                {name}
+              </span>
             ))}
           </div>
         </div>
