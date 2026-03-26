@@ -49,7 +49,7 @@ const citiesData: Record<string, CityData> = {
   toronto: {
     slug: "toronto",
     name: "Toronto",
-    metaTitle: "Event Entertainment Toronto | DJ, Photo Booth, Catering - I DO Entertainment",
+    metaTitle: "Wedding DJ & Event Rentals Toronto | Photo Booth, Catering, Bar",
     metaDescription: "Full-service event entertainment in Toronto. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events across Toronto.",
     heroImage: "https://images.unsplash.com/photo-1517090504332-6f084180cadf?w=1920&q=80",
     heroDescription: "From King West lofts to Liberty Grand ballrooms, we bring world-class entertainment to every corner of Toronto. Over 300 events delivered across the city with a perfect 5.0 Google rating.",
@@ -72,7 +72,7 @@ const citiesData: Record<string, CityData> = {
   mississauga: {
     slug: "mississauga",
     name: "Mississauga",
-    metaTitle: "Event Entertainment Mississauga | DJ, Photo Booth, Catering - I DO Entertainment",
+    metaTitle: "Wedding DJ & Party Rentals Mississauga | Photo Booth, Catering",
     metaDescription: "Premium event entertainment in Mississauga. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Mississauga and Peel Region.",
     heroImage: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&q=80",
     heroDescription: "Mississauga couples and corporate planners trust I DO Entertainment for full-service event production. From Lakefront Promenade celebrations to grand banquet hall weddings, we deliver flawless entertainment across Peel Region.",
@@ -95,7 +95,7 @@ const citiesData: Record<string, CityData> = {
   brampton: {
     slug: "brampton",
     name: "Brampton",
-    metaTitle: "Event Entertainment Brampton | DJ, Photo Booth, Catering - I DO Entertainment",
+    metaTitle: "Wedding DJ & Event Rentals Brampton | Photo Booth, Catering",
     metaDescription: "Full-service event entertainment in Brampton. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Brampton.",
     heroImage: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1920&q=80",
     heroDescription: "Brampton is one of the fastest-growing event markets in the GTA, and I DO Entertainment has been serving the community for 8+ years. From grand banquet hall weddings to intimate backyard celebrations, we bring the same premium experience to every event.",
@@ -118,7 +118,7 @@ const citiesData: Record<string, CityData> = {
   vaughan: {
     slug: "vaughan",
     name: "Vaughan",
-    metaTitle: "Event Entertainment Vaughan | DJ, Photo Booth, Catering - I DO Entertainment",
+    metaTitle: "Wedding DJ & Party Rentals Vaughan | Photo Booth, Catering, Bar",
     metaDescription: "Premium event entertainment in Vaughan. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Vaughan and York Region.",
     heroImage: "https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=1920&q=80",
     heroDescription: "Vaughan is home to some of the GTA's most stunning banquet halls and event venues. I DO Entertainment brings premium entertainment, flawless execution, and 8+ years of experience to every event in Vaughan and York Region.",
@@ -141,7 +141,7 @@ const citiesData: Record<string, CityData> = {
   etobicoke: {
     slug: "etobicoke",
     name: "Etobicoke",
-    metaTitle: "Event Entertainment Etobicoke | DJ, Photo Booth, Catering - I DO Entertainment",
+    metaTitle: "Wedding DJ & Event Rentals Etobicoke | Photo Booth, Catering",
     metaDescription: "Full-service event entertainment in Etobicoke. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Etobicoke.",
     heroImage: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1920&q=80",
     heroDescription: "Etobicoke offers some of the most charming and versatile event spaces in the west end of Toronto. I DO Entertainment brings full-service entertainment to every venue in Etobicoke, from historic estates to modern event halls.",
@@ -164,7 +164,7 @@ const citiesData: Record<string, CityData> = {
   oakville: {
     slug: "oakville",
     name: "Oakville",
-    metaTitle: "Event Entertainment Oakville | DJ, Photo Booth, Catering - I DO Entertainment",
+    metaTitle: "Wedding DJ & Event Rentals Oakville | Photo Booth, Catering, Bar",
     metaDescription: "Premium event entertainment in Oakville. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Oakville and Halton Region.",
     heroImage: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80",
     heroDescription: "Oakville's elegant venues and lakefront setting create the perfect backdrop for unforgettable events. I DO Entertainment delivers refined, full-service entertainment tailored to Oakville's sophisticated event scene.",
@@ -187,7 +187,7 @@ const citiesData: Record<string, CityData> = {
   "north-york": {
     slug: "north-york",
     name: "North York",
-    metaTitle: "Event Entertainment North York | DJ, Photo Booth, Catering - I DO Entertainment",
+    metaTitle: "Wedding DJ & Party Rentals North York | Photo Booth, Catering",
     metaDescription: "Full-service event entertainment in North York. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in North York.",
     heroImage: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=1920&q=80",
     heroDescription: "North York is home to some of the GTA's most iconic banquet halls and event venues. I DO Entertainment delivers full-service entertainment for weddings, corporate events, and private celebrations across the entire North York area.",

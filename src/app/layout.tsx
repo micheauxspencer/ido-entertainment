@@ -5,30 +5,32 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://idoentertainment.ca"),
   title: {
-    default: "I DO Entertainment | Event Planning & Rentals in Toronto & GTA",
-    template: "%s | I DO Entertainment",
+    default: "Event Rentals & Planning Toronto | Wedding DJ & Corporate Party Services",
+    template: "%s | I DO Entertainment Toronto",
   },
   description:
-    "Toronto's premier full-service event company. DJ services, photo booths, catering, bar services, lighting, audio, and event rentals for weddings, corporate events, and private celebrations across the GTA.",
+    "Wedding DJ, photo booth, catering, bar service, and event rentals in Toronto & GTA. 500+ events, 5.0 Google rating. Get a free quote for your wedding or corporate event today.",
   keywords: [
-    "event planning toronto",
     "wedding dj toronto",
     "photo booth rental toronto",
-    "photo booth rental gta",
-    "catering toronto",
     "event rentals toronto",
-    "bar services toronto",
-    "lighting audio rental toronto",
-    "wedding entertainment gta",
-    "corporate event planning toronto",
-    "360 photo booth toronto",
+    "wedding catering toronto",
     "mobile bar service toronto",
-    "event decor rental gta",
+    "corporate event planning toronto",
+    "360 photo booth rental gta",
+    "wedding planner toronto",
+    "event lighting rental toronto",
+    "party rentals mississauga",
+    "wedding dj brampton",
+    "corporate party planning gta",
+    "event catering mississauga",
+    "tent rental toronto",
+    "uplighting rental toronto",
   ],
   openGraph: {
-    title: "I DO Entertainment | Event Planning & Rentals in Toronto & GTA",
+    title: "Event Rentals & Planning Toronto | Wedding DJ & Corporate Party Services",
     description:
-      "Full-service event planning, premium rentals, and custom entertainment for weddings, corporate events, and celebrations across Toronto and the GTA.",
+      "Wedding DJ, photo booth, catering, bar service, and event rentals in Toronto & GTA. 500+ events, 5.0 Google rating. Free quotes available.",
     type: "website",
     locale: "en_CA",
     url: "https://idoentertainment.ca",
@@ -36,9 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "I DO Entertainment | Event Planning & Rentals in Toronto & GTA",
+    title: "Event Rentals & Planning Toronto | Wedding DJ & Corporate Party Services",
     description:
-      "Full-service event planning, premium rentals, and custom entertainment for weddings, corporate events, and celebrations across Toronto and the GTA.",
+      "Wedding DJ, photo booth, catering, bar service, and event rentals in Toronto & GTA. 500+ events, 5.0 Google rating. Free quotes available.",
   },
   alternates: {
     canonical: "https://idoentertainment.ca",
