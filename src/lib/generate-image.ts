@@ -18,13 +18,12 @@ export async function generateBlogImage(
 
   console.log(`Generating image for: ${slug}`);
 
-  const result = await fal.subscribe("fal-ai/flux/dev", {
+  const result = await fal.subscribe("fal-ai/recraft-v3", {
     input: {
-      prompt: `Professional editorial photograph, high-end event photography style: ${prompt}. No text, no watermarks, no logos, no overlays.`,
+      prompt,
       image_size: "landscape_16_9",
-      num_images: 1,
+      style: "realistic_image",
     },
-    logs: true,
   });
 
   const imageUrl = result.data?.images?.[0]?.url;
@@ -44,7 +43,7 @@ export async function generateBlogImage(
   const outputPath = path.join(outputDir, `${slug}.webp`);
   writeFileSync(outputPath, webp);
   console.log(
-    `Saved: ${slug}.webp (${(webp.length / 1024).toFixed(0)} KB) in ${result.data?.timings?.inference?.toFixed(1)}s`
+    `Saved: ${slug}.webp (${(webp.length / 1024).toFixed(0)} KB)`
   );
 
   return `/blog/${slug}.webp`;
