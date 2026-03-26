@@ -213,50 +213,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════ TRUSTED BY ═══════════ */}
-      <section className="bg-charcoal border-t border-white/10 py-14">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <span
-              className="text-base text-gold-dark tracking-[0.15em] italic"
-              style={{ fontFamily: "var(--font-serif)" }}
-            >
-              Trusted by leading brands
-            </span>
-          </div>
-          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-5">
-            {[
-              "Liberty Group",
-              "Casa Loma",
-              "Toronto Raptors",
-              "Holt Renfrew",
-              "Scotiabank",
-              "TD",
-              "McDonald's",
-              "Mitsubishi",
-              "SDI Marketing",
-              "TIFF",
-              "Disney",
-              "Delta Hotels",
-              "Westin",
-              "Sheraton",
-              "McCain's",
-              "Yamaha",
-              "MLS",
-              "Pepsi",
-            ].map((name) => (
-              <span
-                key={name}
-                className="text-white/30 text-xs md:text-sm tracking-[0.15em] uppercase"
-                style={{ fontFamily: "var(--font-accent)" }}
-              >
-                {name}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════ MARQUEE ═══════════ */}
       <div className="bg-gold py-4 overflow-hidden">
         <div className="animate-marquee whitespace-nowrap flex">
@@ -487,6 +443,54 @@ export default function Home() {
             data-romw-token="jz3UgUh0puKKKAGjvmhknKEdDQ1FXeo19SwEAs6u51tNVnMOgi"
             data-romw-lazy
           />
+        </div>
+      </section>
+
+      {/* ═══════════ TRUSTED BY ═══════════ */}
+      <section className="bg-white pt-4 pb-14">
+        <div className="text-center mb-10 px-6">
+          <span
+            className="text-base text-charcoal/60 tracking-[0.15em] italic"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            Trusted by leading brands
+          </span>
+        </div>
+        <div className="relative overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10" />
+            <div className="animate-marquee-reverse flex items-center gap-16 whitespace-nowrap">
+              {[...Array(2)].map((_, setIdx) => (
+                <div key={setIdx} className="flex items-center gap-16 shrink-0">
+                  {[
+                    { name: "Scotiabank", src: "/logos/scotiabank.svg" },
+                    { name: "McDonald's", src: "/logos/mcdonalds.svg" },
+                    { name: "Disney", src: "/logos/disney.svg" },
+                    { name: "Yamaha", src: "/logos/yamaha.svg" },
+                    { name: "Sheraton", src: "/logos/sheraton.svg" },
+                    { name: "Westin", src: "/logos/westin.svg" },
+                    { name: "TIFF", src: "/logos/tiff.svg" },
+                    { name: "Holt Renfrew", src: "https://cdn.brandfetch.io/holtrenfrew.com/w/400/h/100/theme/dark/fallback/transparent/type/logo?c=1idtj7claCaB5vdJ3fl" },
+                    { name: "Mitsubishi", src: "https://cdn.brandfetch.io/mitsubishi.com/w/400/h/100/theme/dark/fallback/transparent/type/logo?c=1idtj7claCaB5vdJ3fl" },
+                    { name: "TD Bank", src: "/logos/td-canada-trust-1.svg" },
+                    { name: "Toronto Raptors", src: "/logos/raptors.svg" },
+                  ].map((brand) => (
+                    <div
+                      key={brand.name}
+                      className="flex items-center justify-center h-10 w-32 shrink-0"
+                      title={brand.name}
+                    >
+                      <img
+                        src={brand.src}
+                        alt={brand.name}
+                        className="max-h-full max-w-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
         </div>
       </section>
 
