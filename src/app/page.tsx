@@ -226,31 +226,36 @@ export default function Home() {
         <div className="relative">
           <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-charcoal to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-charcoal to-transparent z-10" />
-          <div className="animate-marquee flex items-center gap-16 whitespace-nowrap">
+          <div className="animate-marquee flex items-center gap-12 md:gap-20 whitespace-nowrap">
             {[...Array(2)].map((_, setIdx) => (
-              <div key={setIdx} className="flex items-center gap-16 shrink-0">
+              <div key={setIdx} className="flex items-center gap-12 md:gap-20 shrink-0">
                 {[
-                  { name: "TD Canada Trust", domain: "td.com" },
-                  { name: "McDonald's", domain: "mcdonalds.com" },
-                  { name: "Disney", domain: "disney.com" },
-                  { name: "Pepsi", domain: "pepsi.com" },
-                  { name: "Yamaha", domain: "yamaha.com" },
-                  { name: "Mitsubishi", domain: "mitsubishi.com" },
-                  { name: "Holt Renfrew", domain: "holtrenfrew.com" },
-                  { name: "Sheraton", domain: "sheraton.marriott.com" },
-                ].map((brand) => (
-                  <div
-                    key={brand.name}
-                    className="group flex items-center justify-center h-12 w-36 shrink-0"
-                    title={brand.name}
+                  "Liberty Group",
+                  "Casa Loma",
+                  "Toronto Raptors",
+                  "Holt Renfrew",
+                  "Scotiabank",
+                  "TD",
+                  "McDonald's",
+                  "Mitsubishi",
+                  "SDI Marketing",
+                  "TIFF",
+                  "Disney",
+                  "Delta Hotels",
+                  "Westin",
+                  "Sheraton",
+                  "McCain's",
+                  "Yamaha",
+                  "MLS",
+                  "Pepsi",
+                ].map((name) => (
+                  <span
+                    key={name}
+                    className="text-white/40 hover:text-white/80 text-sm md:text-base tracking-widest uppercase transition-colors duration-300 shrink-0"
+                    style={{ fontFamily: "var(--font-accent)" }}
                   >
-                    <img
-                      src={`https://cdn.brandfetch.io/${brand.domain}/theme/light/logo?c=1idtj7claCaB5vdJ3fl`}
-                      alt={brand.name}
-                      className="max-h-full max-w-full object-contain brightness-0 invert opacity-50 group-hover:opacity-90 transition-all"
-                      loading="lazy"
-                    />
-                  </div>
+                    {name}
+                  </span>
                 ))}
               </div>
             ))}
