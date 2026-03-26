@@ -230,7 +230,6 @@ export default function Home() {
             {[...Array(2)].map((_, setIdx) => (
               <div key={setIdx} className="flex items-center gap-16 shrink-0">
                 {[
-                  { name: "Scotiabank", domain: "scotiabank.ca" },
                   { name: "TD Canada Trust", domain: "td.com" },
                   { name: "McDonald's", domain: "mcdonalds.com" },
                   { name: "Disney", domain: "disney.com" },
@@ -242,13 +241,13 @@ export default function Home() {
                 ].map((brand) => (
                   <div
                     key={brand.name}
-                    className="group flex items-center justify-center h-10 w-28 shrink-0"
+                    className="group flex items-center justify-center h-12 w-36 shrink-0"
                     title={brand.name}
                   >
                     <img
-                      src={`https://cdn.brandfetch.io/${brand.domain}/theme/dark/logo?c=1idtj7claCaB5vdJ3fl`}
+                      src={`https://cdn.brandfetch.io/${brand.domain}/theme/light/logo?c=1idtj7claCaB5vdJ3fl`}
                       alt={brand.name}
-                      className="max-h-full max-w-full object-contain opacity-70 group-hover:opacity-100 transition-opacity"
+                      className="max-h-full max-w-full object-contain brightness-0 invert opacity-50 group-hover:opacity-90 transition-all"
                       loading="lazy"
                     />
                   </div>
