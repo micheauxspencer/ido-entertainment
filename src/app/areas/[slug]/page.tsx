@@ -37,12 +37,12 @@ interface CityData {
 }
 
 const services = [
-  { icon: Music, title: "DJ Services", slug: "dj-services", desc: "Custom playlists and professional MCs who read the room and keep your guests on the dance floor.", image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&h=400&fit=crop" },
-  { icon: Camera, title: "Photo Booths", slug: "photo-booths", desc: "360 video booths and classic photo booths with instant prints, digital sharing, and custom branding.", image: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&h=400&fit=crop" },
-  { icon: UtensilsCrossed, title: "Catering", slug: "catering", desc: "Chef-crafted menus with full dietary accommodations, from plated dinners to interactive food stations.", image: "https://images.unsplash.com/photo-1555244162-803834f70033?w=600&h=400&fit=crop" },
-  { icon: Tent, title: "Event Rentals", slug: "event-rentals", desc: "Tents, furniture, decor, table settings, and game rentals that transform any venue.", image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&h=400&fit=crop" },
-  { icon: Wine, title: "Bar Services", slug: "bar-services", desc: "Licensed mobile bar with craft cocktails, professional bartenders, and a full non-alcoholic menu.", image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&h=400&fit=crop" },
-  { icon: Lightbulb, title: "Lighting & Audio", slug: "lighting-audio", desc: "Uplighting, dance floor effects, PA systems, wireless mics, and custom gobo projections.", image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop" },
+  { icon: Music, title: "DJ Services", slug: "dj-services", desc: "Custom playlists and professional MCs who read the room and keep your guests on the dance floor.", image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&h=400&fit=crop&fm=webp" },
+  { icon: Camera, title: "Photo Booths", slug: "photo-booths", desc: "360 video booths and classic photo booths with instant prints, digital sharing, and custom branding.", image: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&h=400&fit=crop&fm=webp" },
+  { icon: UtensilsCrossed, title: "Catering", slug: "catering", desc: "Chef-crafted menus with full dietary accommodations, from plated dinners to interactive food stations.", image: "https://images.unsplash.com/photo-1555244162-803834f70033?w=600&h=400&fit=crop&fm=webp" },
+  { icon: Tent, title: "Event Rentals", slug: "event-rentals", desc: "Tents, furniture, decor, table settings, and game rentals that transform any venue.", image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&h=400&fit=crop&fm=webp" },
+  { icon: Wine, title: "Bar Services", slug: "bar-services", desc: "Licensed mobile bar with craft cocktails, professional bartenders, and a full non-alcoholic menu.", image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&h=400&fit=crop&fm=webp" },
+  { icon: Lightbulb, title: "Lighting & Audio", slug: "lighting-audio", desc: "Uplighting, dance floor effects, PA systems, wireless mics, and custom gobo projections.", image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop&fm=webp" },
 ];
 
 const citiesData: Record<string, CityData> = {
@@ -51,9 +51,9 @@ const citiesData: Record<string, CityData> = {
     name: "Toronto",
     metaTitle: "Wedding DJ & Event Rentals Toronto | Photo Booth, Catering, Bar",
     metaDescription: "Full-service event entertainment in Toronto. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events across Toronto.",
-    heroImage: "https://images.unsplash.com/photo-1517090504332-6f084180cadf?w=1920&q=80",
+    heroImage: "https://images.unsplash.com/photo-1517090504332-6f084180cadf?w=1920&q=80&fm=webp",
     heroDescription: "From King West lofts to Liberty Grand ballrooms, we bring world-class entertainment to every corner of Toronto. Over 300 events delivered across the city with a perfect 5.0 Google rating.",
-    localImage: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80",
+    localImage: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80&fm=webp",
     localContent: [
       "Toronto hosts some of the most diverse and vibrant events in Canada. Whether it is a waterfront wedding at the Distillery District, a corporate gala at the Royal Ontario Museum, or a rooftop celebration in King West, I DO Entertainment has the experience and equipment to match the energy of this city.",
       "Our team knows Toronto venues inside and out. We have worked at Liberty Grand, The Fermenting Cellar, Casa Loma, Palais Royale, The Carlu, Evergreen Brick Works, and dozens of boutique spaces across the city. That venue knowledge means we show up prepared with the right equipment, the right setup plan, and zero surprises on your event day.",
@@ -74,9 +74,9 @@ const citiesData: Record<string, CityData> = {
     name: "Mississauga",
     metaTitle: "Wedding DJ & Party Rentals Mississauga | Photo Booth, Catering",
     metaDescription: "Premium event entertainment in Mississauga. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Mississauga and Peel Region.",
-    heroImage: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&q=80",
+    heroImage: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&q=80&fm=webp",
     heroDescription: "Mississauga couples and corporate planners trust I DO Entertainment for full-service event production. From Lakefront Promenade celebrations to grand banquet hall weddings, we deliver flawless entertainment across Peel Region.",
-    localImage: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+    localImage: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80&fm=webp",
     localContent: [
       "Mississauga is home to some of the GTA's most popular banquet halls and event venues. Spaces like Paramount Event Space, Versailles Convention Centre, Le Jardin, and the Waterside Inn host hundreds of weddings and corporate events each year, and I DO Entertainment has been a preferred vendor at many of them.",
       "The city's multicultural community means we regularly handle events spanning South Asian weddings with baraat processions and sangeet nights, Middle Eastern celebrations with traditional music integration, Caribbean parties, and classic Western receptions. Our DJs are fluent in every genre and our team understands the cultural nuances that make each event unique.",
@@ -97,9 +97,9 @@ const citiesData: Record<string, CityData> = {
     name: "Brampton",
     metaTitle: "Wedding DJ & Event Rentals Brampton | Photo Booth, Catering",
     metaDescription: "Full-service event entertainment in Brampton. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Brampton.",
-    heroImage: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1920&q=80",
+    heroImage: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1920&q=80&fm=webp",
     heroDescription: "Brampton is one of the fastest-growing event markets in the GTA, and I DO Entertainment has been serving the community for 8+ years. From grand banquet hall weddings to intimate backyard celebrations, we bring the same premium experience to every event.",
-    localImage: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800&q=80",
+    localImage: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800&q=80&fm=webp",
     localContent: [
       "Brampton's event scene has exploded in recent years with venues like Chateau Le Jardin, Embassy Grand Convention Centre, and Pearson Convention Centre hosting hundreds of celebrations annually. I DO Entertainment has built strong relationships with venues across the city, which means smoother load-in, better setup coordination, and a team that already knows the space.",
       "The South Asian wedding market in Brampton is one of the largest in the GTA. Our DJs carry extensive Bollywood, Bhangra, and Punjabi libraries, and our team understands the flow of multi-day celebrations from Mehndi to reception. We also produce corporate events, holiday parties, school dances, and community celebrations throughout Peel Region.",
@@ -120,9 +120,9 @@ const citiesData: Record<string, CityData> = {
     name: "Vaughan",
     metaTitle: "Wedding DJ & Party Rentals Vaughan | Photo Booth, Catering, Bar",
     metaDescription: "Premium event entertainment in Vaughan. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Vaughan and York Region.",
-    heroImage: "https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=1920&q=80",
+    heroImage: "https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=1920&q=80&fm=webp",
     heroDescription: "Vaughan is home to some of the GTA's most stunning banquet halls and event venues. I DO Entertainment brings premium entertainment, flawless execution, and 8+ years of experience to every event in Vaughan and York Region.",
-    localImage: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80",
+    localImage: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80&fm=webp",
     localContent: [
       "Vaughan has become one of the premier event destinations in the GTA. Venues like Terrace Banquet Centre, Universal EventSpace, Hazelton Manor, and The Venetian host thousands of celebrations each year ranging from lavish Italian weddings to large-scale corporate productions.",
       "The Italian, Portuguese, and Jewish communities in Vaughan have a strong tradition of grand celebrations, and our team understands the cultural expectations that come with those events. From Hora dances to tarantella circles, from cocktail-heavy receptions to multi-course sit-down dinners, we tailor the entertainment to match the energy and traditions your family expects.",
@@ -143,9 +143,9 @@ const citiesData: Record<string, CityData> = {
     name: "Etobicoke",
     metaTitle: "Wedding DJ & Event Rentals Etobicoke | Photo Booth, Catering",
     metaDescription: "Full-service event entertainment in Etobicoke. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Etobicoke.",
-    heroImage: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1920&q=80",
+    heroImage: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1920&q=80&fm=webp",
     heroDescription: "Etobicoke offers some of the most charming and versatile event spaces in the west end of Toronto. I DO Entertainment brings full-service entertainment to every venue in Etobicoke, from historic estates to modern event halls.",
-    localImage: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
+    localImage: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80&fm=webp",
     localContent: [
       "Etobicoke sits at the crossroads of Toronto and Mississauga, making it an ideal location for events drawing guests from across the GTA. Venues like The Old Mill Toronto, The Waterside Inn, Islington Golf Club, and the Humber Valley offer a mix of historic charm and modern elegance that pairs perfectly with premium entertainment.",
       "The neighborhood character of Etobicoke means events here tend to feel more intimate and personal compared to downtown Toronto. Whether it is a garden wedding at a Humber River estate, a retirement dinner at a golf club, or a holiday party at a waterfront restaurant, the atmosphere calls for entertainment that matches the setting without overpowering it.",
@@ -166,9 +166,9 @@ const citiesData: Record<string, CityData> = {
     name: "Oakville",
     metaTitle: "Wedding DJ & Event Rentals Oakville | Photo Booth, Catering, Bar",
     metaDescription: "Premium event entertainment in Oakville. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in Oakville and Halton Region.",
-    heroImage: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80",
+    heroImage: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80&fm=webp",
     heroDescription: "Oakville's elegant venues and lakefront setting create the perfect backdrop for unforgettable events. I DO Entertainment delivers refined, full-service entertainment tailored to Oakville's sophisticated event scene.",
-    localImage: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&q=80",
+    localImage: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&q=80&fm=webp",
     localContent: [
       "Oakville is one of the GTA's most sought-after event destinations, known for its waterfront charm, estate properties, and upscale venues. Spaces like Paletta Lakefront, Glen Abbey Golf Club, Oakville Conference Centre, and The Raithby offer settings that demand entertainment to match.",
       "Events in Oakville tend to lean toward refined elegance. Our team excels at reading the room and matching the energy, whether that means a jazz trio during cocktails transitioning to a high-energy dance set, or sophisticated uplighting that transforms a lakefront tent into a magazine-worthy reception space.",
@@ -189,9 +189,9 @@ const citiesData: Record<string, CityData> = {
     name: "North York",
     metaTitle: "Wedding DJ & Party Rentals North York | Photo Booth, Catering",
     metaDescription: "Full-service event entertainment in North York. Professional DJs, photo booths, catering, bar services, lighting, and rentals for weddings and corporate events in North York.",
-    heroImage: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=1920&q=80",
+    heroImage: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=1920&q=80&fm=webp",
     heroDescription: "North York is home to some of the GTA's most iconic banquet halls and event venues. I DO Entertainment delivers full-service entertainment for weddings, corporate events, and private celebrations across the entire North York area.",
-    localImage: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
+    localImage: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80&fm=webp",
     localContent: [
       "North York's event scene is anchored by legendary venues like The Montecassino, Grand Luxe Event Boutique, York Mills Gallery, and the Toronto Botanical Garden. These spaces host everything from 100-person intimate dinners to 600-guest grand celebrations, and I DO Entertainment has produced events at many of them.",
       "The cultural diversity of North York means we regularly produce Persian, Korean, Chinese, Filipino, South Asian, and multicultural events, each with unique music requirements, traditions, and energy levels. Our DJ team carries libraries spanning every genre and our MCs adapt their style to match the cultural tone of your celebration.",

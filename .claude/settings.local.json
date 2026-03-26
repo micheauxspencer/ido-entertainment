@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(where npx:*)",
+      "Bash(xargs kill:*)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //F //FI 'WINDOWTITLE eq next*')",
+      "Bash(taskkill //F //PID 39608)",
+      "Bash(where node:*)",
+      "Bash(where npm:*)",
+      "mcp__scheduled-tasks__list_scheduled_tasks",
+      "Bash(curl -sL \"https://cdn.simpleicons.org/mcdonalds/white\" -o mcdonalds.svg)",
+      "Bash(curl -sL \"https://cdn.simpleicons.org/disney/white\" -o disney.svg)",
+      "Bash(curl -sL \"https://cdn.simpleicons.org/pepsi/white\" -o pepsi.svg)",
+      "Bash(curl -sL \"https://cdn.simpleicons.org/yamaha/white\" -o yamaha.svg)",
+      "Bash(curl -sL \"https://cdn.simpleicons.org/mitsubishi/white\" -o mitsubishi.svg)",
+      "Bash(curl -s \"https://api.brandfetch.io/v2/brands/mcdonalds.com\" -H \"Authorization: Bearer 1idtj7claCaB5vdJ3fl\")",
+      "WebFetch(domain:docs.brandfetch.com)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/miche/Downloads/ido/public/logos/**)",
+      "Bash(done)",
+      "WebFetch(domain:api.brandfetch.io)"
+    ]
+  }
+}

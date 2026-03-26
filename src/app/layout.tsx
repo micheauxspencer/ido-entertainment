@@ -60,7 +60,8 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "EventPlanningBusiness",
+  "@type": "LocalBusiness",
+  additionalType: "https://schema.org/EventPlanningBusiness",
   name: "I DO Entertainment",
   url: "https://idoentertainment.ca",
   telephone: "+14378763359",

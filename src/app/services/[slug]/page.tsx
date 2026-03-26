@@ -43,7 +43,7 @@ const servicesData: Record<string, ServiceData> = {
     heroHeadline: "SET THE PERFECT",
     heroSubline: "Mood",
     heroDescription: "Our professional DJs don't just play music - they read the room, curate the energy, and keep your guests dancing all night. Custom playlists for every moment, from ceremony to last call.",
-    heroImage: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1920&q=80",
+    heroImage: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1920&q=80&fm=webp",
     features: [
       { title: "Custom Playlist Curation", desc: "We build your playlist around your taste, your crowd, and your event timeline - not a generic setlist." },
       { title: "Professional MC Services", desc: "Seamless announcements, introductions, and crowd engagement that keeps the energy flowing." },
@@ -53,9 +53,9 @@ const servicesData: Record<string, ServiceData> = {
       { title: "Lighting Integration", desc: "Optional dance floor lighting, uplighting, and effects that sync with the music for a club-quality experience." },
     ],
     galleryImages: [
-      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=400&fit=crop&fm=webp",
     ],
     faqs: [
       { q: "How far in advance should we book a DJ?", a: "We recommend booking 3-6 months ahead for wedding dates. Popular summer Saturdays book out 6-12 months in advance. Corporate events typically need 4-6 weeks lead time." },
@@ -77,7 +77,7 @@ const servicesData: Record<string, ServiceData> = {
     heroHeadline: "CAPTURE EVERY",
     heroSubline: "Moment",
     heroDescription: "State-of-the-art photo booths and 360 video experiences that give your guests instant keepsakes and shareable content. Custom branding, props, and an attendant included with every package.",
-    heroImage: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1920&q=80",
+    heroImage: "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1920&q=80&fm=webp",
     features: [
       { title: "360 Video Booth", desc: "Cinematic slow-motion videos from every angle. Guests get instant shareable clips with custom overlays." },
       { title: "Classic Photo Booth", desc: "High-quality DSLR photos with studio lighting, green screen options, and instant 4x6 prints." },
@@ -87,9 +87,9 @@ const servicesData: Record<string, ServiceData> = {
       { title: "Dedicated Attendant", desc: "A trained booth attendant manages the line, helps with props, and ensures everything runs smoothly." },
     ],
     galleryImages: [
-      "https://images.unsplash.com/photo-1540575467063-178a50e2fd60?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1540575467063-178a50e2fd60?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&h=400&fit=crop&fm=webp",
     ],
     faqs: [
       { q: "What's the difference between a photo booth and a 360 booth?", a: "A classic photo booth captures posed photos with instant prints. A 360 booth records cinematic slow-motion video as the camera rotates around you, creating shareable social media content." },
@@ -111,7 +111,7 @@ const servicesData: Record<string, ServiceData> = {
     heroHeadline: "EXQUISITE",
     heroSubline: "Cuisine",
     heroDescription: "Talented chefs crafting custom menus tailored to your event, your guests, and your vision. From elegant plated dinners to interactive food stations, we make every bite memorable.",
-    heroImage: "https://images.unsplash.com/photo-1555244162-803834f70033?w=1920&q=80",
+    heroImage: "https://images.unsplash.com/photo-1555244162-803834f70033?w=1920&q=80&fm=webp",
     features: [
       { title: "Custom Menu Design", desc: "Our chef works with you to design a menu that matches your theme, budget, and dietary requirements." },
       { title: "Full Dietary Accommodations", desc: "Vegan, gluten-free, halal, kosher, allergy-friendly options - every guest is taken care of." },
@@ -121,9 +121,9 @@ const servicesData: Record<string, ServiceData> = {
       { title: "Setup & Cleanup Included", desc: "We handle everything from table settings to kitchen cleanup. You just enjoy the meal." },
     ],
     galleryImages: [
-      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop&fm=webp",
     ],
     faqs: [
       { q: "Can you accommodate multiple dietary restrictions at one event?", a: "Absolutely. We regularly handle events with 5+ dietary requirements simultaneously including vegan, gluten-free, halal, kosher, and allergy-specific meals. Each is individually labeled and tracked." },
@@ -145,7 +145,7 @@ const servicesData: Record<string, ServiceData> = {
     heroHeadline: "TRANSFORM YOUR",
     heroSubline: "Venue",
     heroDescription: "Premium tents, stylish furniture, elegant decor, and game rentals that elevate any space. From intimate garden parties to grand ballroom events, we have everything you need.",
-    heroImage: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&q=80",
+    heroImage: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1920&q=80&fm=webp",
     features: [
       { title: "Tent & Canopy Rentals", desc: "Frame tents, pole tents, and clear-top canopies sized from 20x20 to 60x120 for any outdoor event." },
       { title: "Furniture Collections", desc: "Lounge sets, farm tables, chiavari chairs, ghost chairs, and modern furniture that match any aesthetic." },
@@ -155,9 +155,9 @@ const servicesData: Record<string, ServiceData> = {
       { title: "Delivery & Setup", desc: "We deliver, set up, and pick up everything. Your venue is transformed and restored with zero effort on your part." },
     ],
     galleryImages: [
-      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1507504031003-b417219a0fde?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=400&fit=crop&fm=webp",
     ],
     faqs: [
       { q: "How far in advance should I book rentals?", a: "4-8 weeks for standard items. Specialty items and peak season (May through October) should be booked 2-3 months out to guarantee availability." },
@@ -179,7 +179,7 @@ const servicesData: Record<string, ServiceData> = {
     heroHeadline: "ELEVATE YOUR",
     heroSubline: "Bar",
     heroDescription: "Premium mobile bar service with craft cocktails, professional bartenders, and a stunning setup. Licensed, insured, and equipped to handle events from 50 to 500+ guests.",
-    heroImage: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1920&q=80",
+    heroImage: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1920&q=80&fm=webp",
     features: [
       { title: "Craft Cocktail Menu", desc: "Custom signature cocktails designed for your event, plus a full bar of classic drinks your guests know and love." },
       { title: "Professional Bartenders", desc: "Experienced, personable bartenders who keep the line moving and the drinks perfect." },
@@ -189,9 +189,9 @@ const servicesData: Record<string, ServiceData> = {
       { title: "Non-Alcoholic Options", desc: "Mocktail menu, craft sodas, and specialty non-alcoholic beverages so every guest feels included." },
     ],
     galleryImages: [
-      "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1574096079513-d8259312b785?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1574096079513-d8259312b785?w=600&h=400&fit=crop&fm=webp",
     ],
     faqs: [
       { q: "Are your bartenders licensed and insured?", a: "Yes. All our bartenders are Smart Serve certified. We carry full commercial liability insurance and can provide a certificate of insurance for your venue if required." },
@@ -213,7 +213,7 @@ const servicesData: Record<string, ServiceData> = {
     heroHeadline: "CREATE THE PERFECT",
     heroSubline: "Atmosphere",
     heroDescription: "Expert lighting design and high-quality audio systems that transform any venue. From dramatic uplighting to crystal-clear speeches, we set the mood and ensure everyone is heard.",
-    heroImage: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1920&q=80",
+    heroImage: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1920&q=80&fm=webp",
     features: [
       { title: "Uplighting & Wash Lighting", desc: "Color-matched LED uplighting that transforms walls, ceilings, and columns to match your event palette." },
       { title: "Dance Floor Lighting", desc: "Moving heads, laser effects, fog machines, and intelligent lighting that syncs with the music." },
@@ -223,9 +223,9 @@ const servicesData: Record<string, ServiceData> = {
       { title: "Custom Gobo Projections", desc: "Project your monogram, logo, or custom design onto walls or dance floors with precision gobo lights." },
     ],
     galleryImages: [
-      "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&h=400&fit=crop&fm=webp",
     ],
     faqs: [
       { q: "Can you visit our venue before the event?", a: "Yes. For weddings and large events, we offer a complimentary venue walkthrough to assess lighting placement, power access, and sound system positioning before your event day." },

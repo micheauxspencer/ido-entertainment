@@ -76,7 +76,7 @@ const services = [
     slug: "dj-services",
     desc: "Professional DJs with customized playlists that read the room and keep your guests dancing all night long.",
     image:
-      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=600&h=400&fit=crop&fm=webp&fm=webp",
   },
   {
     icon: Camera,
@@ -84,7 +84,7 @@ const services = [
     slug: "photo-booths",
     desc: "State-of-the-art photo booths and 360 experiences with instant prints, digital sharing, and custom branding.",
     image:
-      "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&h=400&fit=crop&fm=webp&fm=webp",
   },
   {
     icon: UtensilsCrossed,
@@ -92,7 +92,7 @@ const services = [
     slug: "catering",
     desc: "Exquisite cuisine crafted by talented chefs, tailored to your preferences with full dietary accommodations.",
     image:
-      "https://images.unsplash.com/photo-1555244162-803834f70033?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1555244162-803834f70033?w=600&h=400&fit=crop&fm=webp&fm=webp",
   },
   {
     icon: Tent,
@@ -100,7 +100,7 @@ const services = [
     slug: "event-rentals",
     desc: "Premium tents, stylish furniture, decor, and game rentals that elevate the atmosphere of any venue.",
     image:
-      "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&h=400&fit=crop&fm=webp&fm=webp",
   },
   {
     icon: Wine,
@@ -108,7 +108,7 @@ const services = [
     slug: "bar-services",
     desc: "Premium mobile bar with craft cocktails and professional bartenders who wow your guests with every pour.",
     image:
-      "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&h=400&fit=crop&fm=webp&fm=webp",
   },
   {
     icon: Lightbulb,
@@ -116,7 +116,7 @@ const services = [
     slug: "lighting-audio",
     desc: "Expert lighting design and high-quality audio systems that create the perfect atmosphere for your event.",
     image:
-      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop&fm=webp",
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop&fm=webp&fm=webp",
   },
 ];
 
@@ -133,7 +133,7 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80&fm=webp')",
+              "url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80&fm=webp&fm=webp')",
           }}
           role="img"
           aria-label="Wedding couple at elegant event venue in Toronto"
@@ -300,7 +300,7 @@ export default function Home() {
                       className="inline-flex items-center gap-1 text-sm font-semibold text-charcoal hover:text-gold-dark transition-colors group/link"
                       style={{ fontFamily: "var(--font-accent)" }}
                     >
-                      Learn More<span className="sr-only"> about {svc.title}</span>
+                      Explore {svc.title}
                       <ChevronRight
                         size={16}
                         className="group-hover/link:translate-x-1 transition-transform"
@@ -326,7 +326,7 @@ export default function Home() {
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
                     backgroundImage:
-                      "url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80&fm=webp')",
+                      "url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80&fm=webp&fm=webp')",
                   }}
                 />
               </div>
@@ -503,7 +503,7 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&q=80&fm=webp')",
+              "url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&q=80&fm=webp&fm=webp')",
           }}
         />
         <div className="absolute inset-0 bg-charcoal/85" />
