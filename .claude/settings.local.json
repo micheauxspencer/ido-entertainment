@@ -22,7 +22,30 @@
       "Bash(do echo:*)",
       "Read(//c/Users/miche/Downloads/ido/public/logos/**)",
       "Bash(done)",
-      "WebFetch(domain:api.brandfetch.io)"
+      "WebFetch(domain:api.brandfetch.io)",
+      "mcp__mcp-registry__search_mcp_registry",
+      "WebSearch",
+      "WebFetch(domain:higgsfield.ai)",
+      "WebFetch(domain:github.com)",
+      "Bash(npm install:*)",
+      "Bash(HIGGSFIELD_API_KEY=\"72af26a5-b4ff-448f-897f-487977fc856a\" npx tsx scripts/generate-blog-images.ts)",
+      "Bash(HIGGSFIELD_API_KEY=\"1333b4d3-09a2-4913-90d4-cf852b0566dd:21ba1a470e52636cb92776aa9a240ea85cf887a40a16b46489aadd3b00078ac8\" npx tsx scripts/generate-blog-images.ts)",
+      "WebFetch(domain:docs.higgsfield.ai)",
+      "Bash(npx tsx:*)",
+      "Bash(sed -i 's|image: \"\"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&h=600&fit=crop\"\"|image: \"\"/blog/hiring-the-right-dj-for-your-event.webp\"\"|' src/content/blog/hiring-the-right-dj-for-your-event.mdx)",
+      "Bash(sed -i 's|image: \"\"https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=1200&h=600&fit=crop\"\"|image: \"\"/blog/wedding-uplighting-myths-toronto.webp\"\"|' src/content/blog/wedding-uplighting-myths-toronto.mdx)",
+      "Bash(sed -i 's|image: \"\"https://images.unsplash.com/photo-1540575467063-178a50e2fd60?w=1200&h=600&fit=crop\"\"|image: \"\"/blog/10-photo-booth-features-toronto-events.webp\"\"|' src/content/blog/10-photo-booth-features-toronto-events.mdx)",
+      "WebFetch(domain:app.klingai.com)",
+      "WebFetch(domain:docs.qingque.cn)",
+      "Bash(grep \"^image:\" src/content/blog/*.mdx)",
+      "Bash(sed -i 's|image: \"\"https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1200&h=600&fit=crop\"\"|image: \"\"/blog/10-photo-booth-features-toronto-events.webp\"\"|' src/content/blog/10-photo-booth-features-toronto-events.mdx)",
+      "Bash(sed -i 's|image: \"\"https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1200&h=600&fit=crop\"\"|image: \"\"/blog/how-to-plan-wedding-cocktail-hour-toronto.webp\"\"|' src/content/blog/how-to-plan-wedding-cocktail-hour-toronto.mdx)",
+      "Bash(curl -s \"https://4mn38mw1.api.sanity.io/v2024-01-01/data/query/production?query=*%5B_type%20%3D%3D%20%22blogPost%22%5D%5B0..2%5D\" -H \"Authorization: Bearer $SANITY_TOKEN\")",
+      "Bash(TOKEN=\"skPJZj62G0TPRCVF6Nd2Dh0pO1TjB2JDWbaQq38dpzK2RDbQGfN1h9U7MxEws56r0HRLQLdxvAYAEEGdowwfYIHHEiyVHu51bhgPjwbUgSzYAZnt47itOkihjCRgF517dThFqumdgGl1VQZrT4KWOUhkE8oQFXdYB6CImljSm0qQX5anT0nz\")",
+      "Bash(curl -s \"https://4mn38mw1.api.sanity.io/v2024-01-01/data/query/production?query=*%5B0..2%5D\" -H \"Authorization: Bearer $TOKEN\")",
+      "Bash(node -e \":*)",
+      "Bash(node scripts/migrate-to-sanity.mjs)",
+      "Bash(npm uninstall:*)"
     ]
   }
 }

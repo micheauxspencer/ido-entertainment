@@ -2,15 +2,16 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Clock, ChevronRight } from "lucide-react";
-import { compile, run } from "@mdx-js/mdx";
-import { jsx, jsxs, Fragment } from "react/jsx-runtime";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { mdxComponents } from "@/components/MDXComponents";
-import { getAllSlugs, getPostBySlug } from "@/lib/blog";
+import { getAllSlugs, getPostBySlug } from "@/lib/sanity";
+import MarkdownBody from "@/components/MarkdownBody";
 
-export function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -19,18 +20,17 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) return { title: "Post Not Found" };
-  const { frontmatter: fm } = post;
   return {
-    title: fm.title,
-    description: fm.description,
+    title: post.title,
+    description: post.description,
     openGraph: {
-      title: fm.title,
-      description: fm.description,
+      title: post.title,
+      description: post.description,
       type: "article",
-      url: `https://idoentertainment.ca/blog/${fm.slug}`,
-      images: [{ url: fm.image, alt: fm.imageAlt }],
+      url: `https://idoentertainment.ca/blog/${post.slug}`,
+      images: [{ url: post.image, alt: post.imageAlt }],
     },
   };
 }
@@ -41,29 +41,17 @@ export default async function BlogPost({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) notFound();
 
-  const { frontmatter: fm, content } = post;
-
-  // Compile and run MDX
-  const compiled = await compile(content, { outputFormat: "function-body" });
-  const { default: MDXContent } = await run(String(compiled), {
-    jsx,
-    jsxs,
-    Fragment,
-    baseUrl: import.meta.url,
-  });
-
-  // JSON-LD schema
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: fm.title,
-    description: fm.description,
-    image: fm.image,
-    datePublished: fm.date,
-    dateModified: fm.date,
+    headline: post.title,
+    description: post.description,
+    image: post.image,
+    datePublished: post.date,
+    dateModified: post.date,
     author: {
       "@type": "Organization",
       name: "I DO Entertainment",
@@ -74,8 +62,8 @@ export default async function BlogPost({
       name: "I DO Entertainment",
       url: "https://idoentertainment.ca",
     },
-    mainEntityOfPage: `https://idoentertainment.ca/blog/${fm.slug}`,
-    keywords: fm.tags.join(", "),
+    mainEntityOfPage: `https://idoentertainment.ca/blog/${post.slug}`,
+    keywords: post.tags.join(", "),
   };
 
   return (
@@ -85,26 +73,17 @@ export default async function BlogPost({
       {/* Hero */}
       <section className="relative bg-charcoal pt-28 pb-28">
         <div className="max-w-3xl mx-auto px-6">
-          {/* Breadcrumb */}
           <div className="flex items-center gap-2 mb-6 text-sm text-white/40">
-            <Link href="/" className="hover:text-gold transition-colors">
-              Home
-            </Link>
+            <Link href="/" className="hover:text-gold transition-colors">Home</Link>
             <ChevronRight size={14} />
-            <Link href="/blog" className="hover:text-gold transition-colors">
-              Blog
-            </Link>
+            <Link href="/blog" className="hover:text-gold transition-colors">Blog</Link>
             <ChevronRight size={14} />
-            <span className="text-gold truncate max-w-[200px]">{fm.title}</span>
+            <span className="text-gold truncate max-w-[200px]">{post.title}</span>
           </div>
 
-          {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-4">
-            {fm.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs bg-white/10 text-white/60 px-3 py-1 rounded-full"
-              >
+            {post.tags.map((tag) => (
+              <span key={tag} className="text-xs bg-white/10 text-white/60 px-3 py-1 rounded-full">
                 {tag}
               </span>
             ))}
@@ -114,14 +93,14 @@ export default async function BlogPost({
             className="text-3xl md:text-4xl lg:text-5xl text-white leading-snug mb-4"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            {fm.title}
+            {post.title}
           </h1>
 
           <div className="flex items-center gap-4 text-sm text-white/40">
-            <span>{fm.author}</span>
+            <span>{post.author}</span>
             <span>|</span>
             <span>
-              {new Date(fm.date).toLocaleDateString("en-CA", {
+              {new Date(post.date).toLocaleDateString("en-CA", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
@@ -130,7 +109,7 @@ export default async function BlogPost({
             <span>|</span>
             <span className="flex items-center gap-1">
               <Clock size={14} />
-              {fm.readingTime}
+              {post.readingTime}
             </span>
           </div>
         </div>
@@ -141,9 +120,9 @@ export default async function BlogPost({
         <div className="aspect-[2/1] rounded-2xl overflow-hidden shadow-2xl">
           <div
             className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url('${fm.image}')` }}
+            style={{ backgroundImage: `url('${post.image}')` }}
             role="img"
-            aria-label={fm.imageAlt}
+            aria-label={post.imageAlt}
           />
         </div>
       </div>
@@ -151,7 +130,7 @@ export default async function BlogPost({
       {/* Article Content */}
       <article className="py-16">
         <div className="max-w-3xl mx-auto px-6">
-          <MDXContent components={mdxComponents} />
+          <MarkdownBody content={post.body} />
         </div>
       </article>
 
@@ -225,7 +204,6 @@ export default async function BlogPost({
         </Link>
       </div>
 
-      {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}

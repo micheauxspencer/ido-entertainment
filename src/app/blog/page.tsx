@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BlogGrid from "@/components/BlogGrid";
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts } from "@/lib/sanity";
 
 export const metadata: Metadata = {
   title: "Blog | I DO Entertainment - Event Planning Tips & Insights",
@@ -16,8 +16,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogIndex() {
-  const posts = getAllPosts();
+export const revalidate = 60; // ISR: revalidate every 60 seconds
+
+export default async function BlogIndex() {
+  const posts = await getAllPosts();
 
   return (
     <>
