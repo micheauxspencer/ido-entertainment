@@ -175,8 +175,9 @@ export default function Home() {
             className="text-base md:text-lg text-white/70 max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed px-2 md:px-0"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            Full-service event planning, premium rentals, and custom entertainment
-            for weddings, corporate events, and celebrations across the GTA.
+            Full-service event planning, premium rentals, and custom
+            entertainment for weddings, corporate events, and private
+            celebrations across Toronto and the Greater Toronto Area.
           </p>
 
           {/* CTAs */}
