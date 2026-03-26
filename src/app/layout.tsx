@@ -131,10 +131,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Script
-          src="https://reviews.unskripted.com/js/v2/embed.js?id=1f20bba7a0b19c74df97d87d1a9e782a"
-          strategy="lazyOnload"
-        />
       </body>
     </html>
   );

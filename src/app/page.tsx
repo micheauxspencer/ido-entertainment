@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import HoneyBookForm from "@/components/HoneyBookForm";
+import ReviewsWidget from "@/components/ReviewsWidget";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
@@ -439,10 +440,7 @@ export default function Home() {
           </div>
 
           {/* Reviews Widget */}
-          <div
-            data-romw-token="jz3UgUh0puKKKAGjvmhknKEdDQ1FXeo19SwEAs6u51tNVnMOgi"
-            data-romw-lazy
-          />
+          <ReviewsWidget />
         </div>
       </section>
 

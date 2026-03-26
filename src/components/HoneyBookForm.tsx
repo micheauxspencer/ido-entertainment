@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 declare global {
   interface Window {
@@ -11,10 +12,11 @@ declare global {
 export default function HoneyBookForm() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const pathname = usePathname();
 
-  // Lazy-load: only trigger when widget scrolls into view
+  // Reset on navigation so widget re-inits
   useEffect(() => {
+    setIsVisible(false);
     const el = containerRef.current;
     if (!el) return;
     const obs = new IntersectionObserver(
@@ -24,19 +26,20 @@ export default function HoneyBookForm() {
           obs.disconnect();
         }
       },
-      { rootMargin: "200px" } // Start loading 200px before visible
+      { rootMargin: "200px" }
     );
     obs.observe(el);
     return () => obs.disconnect();
-  }, []);
+  }, [pathname]);
 
-  // Load HoneyBook script only after visible
+  // Load HoneyBook script when visible
   useEffect(() => {
-    if (!isVisible || loaded) return;
+    if (!isVisible) return;
 
     window._HB_ = window._HB_ || {};
     window._HB_.pid = "648142dd1137d90008b1b420";
 
+    // Always remove and re-add to force re-init on navigation
     const existingScript = document.querySelector(
       'script[src*="placement-controller"]'
     );
@@ -48,7 +51,6 @@ export default function HoneyBookForm() {
     script.src =
       "https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js";
     document.head.appendChild(script);
-    setLoaded(true);
 
     // Fix iframe accessibility
     const observer = new MutationObserver(() => {
@@ -65,7 +67,7 @@ export default function HoneyBookForm() {
       script.remove();
       observer.disconnect();
     };
-  }, [isVisible, loaded]);
+  }, [isVisible]);
 
   return (
     <div ref={containerRef} className="bg-off-white rounded-3xl p-6 md:p-10 min-h-[400px]">
