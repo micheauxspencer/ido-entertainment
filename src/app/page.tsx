@@ -213,35 +213,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══════════ TRUST BAR ═══════════ */}
-      <section className="bg-charcoal border-t border-white/10">
-        <div className="max-w-6xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { num: 500, suffix: "+", label: "Events Completed" },
-            { num: 5, suffix: ".0", label: "Google Rating" },
-            { num: 8, suffix: "+", label: "Years Experience" },
-            { num: 100, suffix: "%", label: "Client Satisfaction" },
-          ].map((s, i) => (
-            <div key={i} className="space-y-1">
-              <div
-                className="text-4xl md:text-5xl font-bold text-gold"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                <Counter end={s.num} suffix={s.suffix} />
-              </div>
-              <div
-                className="text-sm text-white/50 uppercase tracking-wider italic"
-                style={{ fontFamily: "var(--font-serif)" }}
-              >
-                {s.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* ═══════════ TRUSTED BY ═══════════ */}
-      <section className="bg-charcoal border-t border-white/5 py-12 overflow-hidden">
+      <section className="bg-charcoal border-t border-white/10 py-12 overflow-hidden">
         <div className="text-center mb-8">
           <span
             className="text-base text-gold-dark tracking-[0.15em] italic"
@@ -275,7 +248,7 @@ export default function Home() {
                     <img
                       src={`https://cdn.brandfetch.io/${brand.domain}/theme/dark/logo?c=1idtj7claCaB5vdJ3fl`}
                       alt={brand.name}
-                      className="max-h-full max-w-full object-contain brightness-0 invert opacity-60 group-hover:opacity-100 transition-opacity"
+                      className="max-h-full max-w-full object-contain opacity-70 group-hover:opacity-100 transition-opacity"
                       loading="lazy"
                     />
                   </div>
