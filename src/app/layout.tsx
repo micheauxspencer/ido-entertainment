@@ -115,6 +115,8 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        <link rel="preconnect" href="https://widget.honeybook.com" />
+        <link rel="preconnect" href="https://reviews.unskripted.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=Montserrat:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"

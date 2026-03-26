@@ -298,6 +298,7 @@ export default function Home() {
                       href={`/services/${svc.slug}`}
                       className="inline-flex items-center gap-1 text-sm font-semibold text-charcoal hover:text-gold-dark transition-colors group/link"
                       style={{ fontFamily: "var(--font-accent)" }}
+                      aria-label={`Learn more about ${svc.title}`}
                     >
                       Learn More
                       <ChevronRight
@@ -482,7 +483,9 @@ export default function Home() {
                     >
                       <img
                         src={brand.src}
-                        alt={brand.name}
+                        alt={`${brand.name} logo - I DO Entertainment client`}
+                        width={128}
+                        height={48}
                         className="max-h-full max-w-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
                         loading="lazy"
                       />

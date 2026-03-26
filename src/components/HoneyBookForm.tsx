@@ -32,9 +32,20 @@ export default function HoneyBookForm() {
       "https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js";
     document.head.appendChild(script);
 
+    // Fix iframe accessibility: add title to HoneyBook iframe when it appears
+    const observer = new MutationObserver(() => {
+      const iframe = containerRef.current?.querySelector("iframe");
+      if (iframe && !iframe.title) {
+        iframe.title = "I DO Entertainment Contact Form";
+      }
+    });
+    if (containerRef.current) {
+      observer.observe(containerRef.current, { childList: true, subtree: true });
+    }
+
     return () => {
-      // Cleanup on unmount so next mount gets a fresh init
       script.remove();
+      observer.disconnect();
     };
   }, []);
 

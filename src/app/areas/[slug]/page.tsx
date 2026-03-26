@@ -366,6 +366,7 @@ export default async function AreaPage({
                 <Link
                   key={svc.slug}
                   href={`/services/${svc.slug}`}
+                  aria-label={`Learn more about ${svc.title} in ${city.name}`}
                   className="service-card group bg-white rounded-2xl overflow-hidden shadow-sm border border-black/5"
                 >
                   {/* Image */}
