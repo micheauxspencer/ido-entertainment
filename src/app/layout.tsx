@@ -131,7 +131,7 @@ export default function RootLayout({
         />
         <Script
           src="https://reviews.unskripted.com/js/v2/embed.js?id=1f20bba7a0b19c74df97d87d1a9e782a"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
       </body>
     </html>

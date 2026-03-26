@@ -30,7 +30,7 @@ export default function Footer() {
                 ENTERTAINMENT
               </span>
             </div>
-            <p className="text-white/40 text-sm leading-relaxed max-w-sm">
+            <p className="text-white/60 text-sm leading-relaxed max-w-sm">
               Full-service event planning, premium rentals, and custom
               entertainment for weddings, corporate events, and celebrations
               across Toronto and the GTA.
@@ -38,18 +38,18 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4
+            <h3
               className="text-sm text-white/70 uppercase tracking-wider mb-4"
               style={{ fontFamily: "var(--font-accent)" }}
             >
               Services
-            </h4>
+            </h3>
             <ul className="space-y-2">
               {services.map((s) => (
                 <li key={s.slug}>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="text-white/40 hover:text-gold text-sm transition-colors"
+                    className="text-white/60 hover:text-gold text-sm transition-colors"
                   >
                     {s.title}
                   </Link>
@@ -59,17 +59,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4
+            <h3
               className="text-sm text-white/70 uppercase tracking-wider mb-4"
               style={{ fontFamily: "var(--font-accent)" }}
             >
               Explore
-            </h4>
+            </h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/blog"
-                  className="text-white/40 hover:text-gold text-sm transition-colors"
+                  className="text-white/60 hover:text-gold text-sm transition-colors"
                 >
                   Blog
                 </Link>
@@ -86,7 +86,7 @@ export default function Footer() {
                 <li key={area.slug}>
                   <Link
                     href={`/areas/${area.slug}`}
-                    className="text-white/40 hover:text-gold text-sm transition-colors"
+                    className="text-white/60 hover:text-gold text-sm transition-colors"
                   >
                     {area.name}
                   </Link>
@@ -97,19 +97,19 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/30 text-sm">
+          <p className="text-white/50 text-sm">
             &copy; 2026 I DO Entertainment. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link
               href="/privacy"
-              className="text-white/30 hover:text-gold text-sm transition-colors"
+              className="text-white/50 hover:text-gold text-sm transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-white/30 hover:text-gold text-sm transition-colors"
+              className="text-white/50 hover:text-gold text-sm transition-colors"
             >
               Terms of Service
             </Link>
