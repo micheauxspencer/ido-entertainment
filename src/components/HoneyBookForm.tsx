@@ -81,7 +81,7 @@ export default function HoneyBookForm() {
           />
         </>
       ) : (
-        <div className="flex items-center justify-center h-64 text-charcoal/30">
+        <div className="flex items-center justify-center h-64 text-charcoal/60">
           <span className="text-sm" style={{ fontFamily: "var(--font-accent)" }}>Loading contact form...</span>
         </div>
       )}
