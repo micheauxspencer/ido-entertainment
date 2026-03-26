@@ -240,6 +240,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ═══════════ TRUSTED BY ═══════════ */}
+      <section className="bg-charcoal border-t border-white/5 py-12 overflow-hidden">
+        <div className="text-center mb-8">
+          <span
+            className="text-base text-gold-dark tracking-[0.15em] italic"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            Trusted by leading brands
+          </span>
+        </div>
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-charcoal to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-charcoal to-transparent z-10" />
+          <div className="animate-marquee flex items-center gap-16 whitespace-nowrap">
+            {[...Array(2)].map((_, setIdx) => (
+              <div key={setIdx} className="flex items-center gap-16 shrink-0">
+                {[
+                  { name: "Scotiabank", domain: "scotiabank.com" },
+                  { name: "TD Canada Trust", domain: "td.com" },
+                  { name: "McDonald's", domain: "mcdonalds.com" },
+                  { name: "Disney", domain: "disney.com" },
+                  { name: "Pepsi", domain: "pepsi.com" },
+                  { name: "Yamaha", domain: "yamaha.com" },
+                  { name: "Mitsubishi", domain: "mitsubishi.com" },
+                  { name: "Holt Renfrew", domain: "holtrenfrew.com" },
+                  { name: "Sheraton", domain: "sheraton.marriott.com" },
+                  { name: "Westin", domain: "westin.marriott.com" },
+                  { name: "Delta Hotels", domain: "deltahotels.marriott.com" },
+                  { name: "Toronto Raptors", domain: "nba.com/raptors" },
+                  { name: "Casa Loma", domain: "casaloma.ca" },
+                  { name: "MLS", domain: "mlssoccer.com" },
+                  { name: "McCain's", domain: "mccain.com" },
+                ].map((brand) => (
+                  <div
+                    key={brand.name}
+                    className="flex items-center justify-center h-10 w-28 shrink-0 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+                    title={brand.name}
+                  >
+                    <img
+                      src={`https://cdn.brandfetch.io/${brand.domain}/w/512?c=1idtj7claCaB5vdJ3fl`}
+                      alt={brand.name}
+                      className="max-h-full max-w-full object-contain invert brightness-200"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════ MARQUEE ═══════════ */}
       <div className="bg-gold py-4 overflow-hidden">
         <div className="animate-marquee whitespace-nowrap flex">
