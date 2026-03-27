@@ -64,7 +64,7 @@ const jsonLd = {
   additionalType: "https://schema.org/EventPlanningBusiness",
   name: "I DO Entertainment",
   url: "https://idoentertainment.ca",
-  telephone: "+14378763359",
+  telephone: "+14378763357",
   email: "info@idoentertainment.ca",
   description:
     "Full-service event planning, premium rentals, and custom entertainment for weddings, corporate events, and private celebrations across Toronto and the GTA.",

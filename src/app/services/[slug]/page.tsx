@@ -305,7 +305,7 @@ export default async function ServicePage({
       "@type": "EventPlanningBusiness",
       name: "I DO Entertainment",
       url: "https://idoentertainment.ca",
-      telephone: "+14378763359",
+      telephone: "+14378763357",
     },
     areaServed: { "@type": "City", name: "Toronto" },
   };
@@ -599,7 +599,7 @@ export default async function ServicePage({
                   </div>
                   <div>
                     <div className="text-xs text-charcoal/50 uppercase tracking-wider mb-0.5 italic" style={{ fontFamily: "var(--font-serif)" }}>Call Us</div>
-                    <a href="tel:+14378763359" className="text-charcoal font-medium hover:text-gold-dark transition-colors">(437) 876-3359</a>
+                    <a href="tel:+14378763357" className="text-charcoal font-medium hover:text-gold-dark transition-colors">(437) 876-3357</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

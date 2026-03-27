@@ -254,7 +254,7 @@ export default async function AreaPage({
     "@type": "EventPlanningBusiness",
     name: "I DO Entertainment",
     url: `https://idoentertainment.ca/areas/${city.slug}`,
-    telephone: "+14378363359",
+    telephone: "+14378763357",
     email: "info@idoentertainment.ca",
     areaServed: {
       "@type": "City",
@@ -613,7 +613,7 @@ export default async function AreaPage({
                   </div>
                   <div>
                     <div className="text-xs text-charcoal/50 uppercase tracking-wider mb-0.5 italic" style={{ fontFamily: "var(--font-serif)" }}>Call Us</div>
-                    <a href="tel:+14378363359" className="text-charcoal font-medium hover:text-gold-dark transition-colors">(437) 836-3359</a>
+                    <a href="tel:+14378763357" className="text-charcoal font-medium hover:text-gold-dark transition-colors">(437) 876-3357</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

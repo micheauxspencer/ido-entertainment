@@ -576,10 +576,10 @@ export default function Home() {
                       Call Us
                     </div>
                     <a
-                      href="tel:+14378763359"
+                      href="tel:+14378763357"
                       className="text-charcoal font-medium hover:text-gold-dark transition-colors"
                     >
-                      (437) 876-3359
+                      (437) 876-3357
                     </a>
                   </div>
                 </div>

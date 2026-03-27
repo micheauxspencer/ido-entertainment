@@ -377,7 +377,7 @@ export default function TermsPage() {
               <div className="bg-off-white rounded-2xl p-6 mt-4">
                 <p className="font-semibold text-charcoal">I DO Entertainment</p>
                 <p>Email: info@idoentertainment.ca</p>
-                <p>Phone: (437) 876-3359</p>
+                <p>Phone: (437) 876-3357</p>
                 <p>Service Area: Toronto and the Greater Toronto Area, Ontario, Canada</p>
               </div>
             </section>
