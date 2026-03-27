@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts } from "@/lib/sanity";
 
 const BASE_URL = "https://idoentertainment.ca";
 
@@ -22,7 +22,9 @@ const areas = [
   "north-york",
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getAllPosts();
+
   const servicePages = services.map((slug) => ({
     url: `${BASE_URL}/services/${slug}`,
     lastModified: new Date(),
@@ -30,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const blogPosts = getAllPosts().map((post) => ({
+  const blogPosts = posts.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: "monthly" as const,
