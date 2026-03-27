@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { ArrowRight, Clock, Search, X } from "lucide-react";
-import type { PostMeta } from "@/lib/blog";
+import type { PostMeta } from "@/lib/sanity";
 
 const POSTS_PER_PAGE = 9;
 
